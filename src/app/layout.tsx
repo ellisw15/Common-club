@@ -42,7 +42,7 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={`${heading.variable} ${body.variable}`}>
-      <body className="min-h-screen flex flex-col bg-[#F9F6F1] text-[#181512]">
+      <body className="min-h-screen flex flex-col bg-[#FAF7F2] text-[#1A0C06]">
         <Navigation />
         <main className="flex-1">{children}</main>
         <Footer />

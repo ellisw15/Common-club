@@ -60,26 +60,26 @@ export function MomenceScheduleWidget() {
 
   // ── Placeholder (shown until Momence is connected) ──────────────
   return (
-    <div className="w-full min-h-[640px] bg-[#F2EDE5] flex flex-col items-center justify-center gap-6 text-center px-8 py-20">
-      <div className="w-8 h-px bg-[#B89A78] mx-auto" />
+    <div className="w-full min-h-[640px] bg-[#F3EAE3] flex flex-col items-center justify-center gap-6 text-center px-8 py-20">
+      <div className="w-8 h-px bg-[#AE3717] mx-auto" />
       <p
-        className="text-xl font-light text-[#181512]/30"
+        className="text-xl font-light text-[#1A0C06]/30"
         style={{ fontFamily: "var(--font-heading)" }}
       >
         Live schedule coming soon
       </p>
-      <p className="text-[13px] text-[#181512]/25 max-w-xs leading-relaxed font-light">
+      <p className="text-[13px] text-[#1A0C06]/25 max-w-xs leading-relaxed font-light">
         Connect your Momence account by setting{" "}
-        <code className="bg-[#E2D9CE] px-1.5 py-0.5 text-[11px] text-[#7A6248]">
+        <code className="bg-[#E8D5CC] px-1.5 py-0.5 text-[11px] text-[#8B2C12]">
           NEXT_PUBLIC_MOMENCE_STUDIO_SLUG
         </code>{" "}
-        in <code className="bg-[#E2D9CE] px-1.5 py-0.5 text-[11px] text-[#7A6248]">.env.local</code>
+        in <code className="bg-[#E8D5CC] px-1.5 py-0.5 text-[11px] text-[#8B2C12]">.env.local</code>
       </p>
       <a
         href="https://help.momence.com/en/articles/12029975-plugins-widgets-faq-s"
         target="_blank"
         rel="noopener noreferrer"
-        className="text-[10px] tracking-[0.25em] uppercase text-[#B89A78] hover:text-[#7A6248] transition-colors mt-2"
+        className="text-[10px] tracking-[0.25em] uppercase text-[#AE3717] hover:text-[#8B2C12] transition-colors mt-2"
       >
         Momence setup guide →
       </a>

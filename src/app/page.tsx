@@ -61,13 +61,13 @@ export default function HomePage() {
   return (
     <>
       {/* ── HERO ─────────────────────────────────────────────────── */}
-      <section className="relative min-h-screen flex items-end bg-[#283629] overflow-hidden">
+      <section className="relative min-h-screen flex items-end bg-[#1E0E07] overflow-hidden">
         {/* Subtle gradient wash */}
         <div
           className="absolute inset-0"
           style={{
             background:
-              "radial-gradient(ellipse at 30% 70%, rgba(184,154,120,0.18) 0%, transparent 60%), radial-gradient(ellipse at 80% 10%, rgba(122,98,72,0.12) 0%, transparent 50%)",
+              "radial-gradient(ellipse at 25% 75%, rgba(174,55,23,0.22) 0%, transparent 55%), radial-gradient(ellipse at 80% 10%, rgba(139,44,18,0.10) 0%, transparent 50%)",
           }}
         />
         {/* Fine grid texture */}
@@ -75,36 +75,36 @@ export default function HomePage() {
           className="absolute inset-0 opacity-[0.035]"
           style={{
             backgroundImage:
-              "linear-gradient(#F9F6F1 1px, transparent 1px), linear-gradient(90deg, #F9F6F1 1px, transparent 1px)",
+              "linear-gradient(#FAF7F2 1px, transparent 1px), linear-gradient(90deg, #FAF7F2 1px, transparent 1px)",
             backgroundSize: "60px 60px",
           }}
         />
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 pb-20 pt-40 w-full">
-          <p className="text-[10px] tracking-[0.5em] uppercase text-[#B89A78] font-light mb-10">
+          <p className="text-[10px] tracking-[0.5em] uppercase text-[#AE3717] font-light mb-10">
             Stoneygate · Leicester
           </p>
 
           <h1
-            className="text-[clamp(3.5rem,9.5vw,8.5rem)] font-light leading-[0.95] text-[#F9F6F1] mb-12 max-w-4xl"
+            className="text-[clamp(3.5rem,9.5vw,8.5rem)] font-light leading-[0.95] text-[#FAF7F2] mb-12 max-w-4xl"
             style={{ fontFamily: "var(--font-heading)" }}
           >
             Move with
             <br />
-            <em className="italic text-[#B89A78]">intention.</em>
+            <em className="italic text-[#AE3717]">intention.</em>
           </h1>
 
           <div className="flex flex-col sm:flex-row items-start gap-6">
             <Link
               href="/schedule"
-              className="inline-flex items-center gap-3 px-8 py-3.5 bg-[#B89A78] text-[#181512] text-[10px] tracking-[0.25em] uppercase font-medium hover:bg-[#F9F6F1] transition-colors duration-300 group"
+              className="inline-flex items-center gap-3 px-8 py-3.5 bg-[#AE3717] text-[#1A0C06] text-[10px] tracking-[0.25em] uppercase font-medium hover:bg-[#FAF7F2] transition-colors duration-300 group"
             >
               Reserve Your Place
               <ArrowRight size={13} className="group-hover:translate-x-1 transition-transform" />
             </Link>
             <Link
               href="/classes"
-              className="inline-flex items-center gap-2 text-[10px] tracking-[0.25em] uppercase font-medium text-[#F9F6F1]/40 hover:text-[#F9F6F1]/80 transition-colors pt-3.5"
+              className="inline-flex items-center gap-2 text-[10px] tracking-[0.25em] uppercase font-medium text-[#FAF7F2]/40 hover:text-[#FAF7F2]/80 transition-colors pt-3.5"
             >
               The Practice
               <ArrowRight size={12} />
@@ -113,20 +113,20 @@ export default function HomePage() {
         </div>
 
         {/* Bottom fade to cream */}
-        <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-[#283629]/0" />
+        <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-[#1E0E07]/0" />
       </section>
 
       {/* ── INTRO OFFER ──────────────────────────────────────────── */}
-      <div className="bg-[#B89A78]">
+      <div className="bg-[#AE3717]">
         <div className="max-w-7xl mx-auto px-6 lg:px-12 py-4 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="text-[12px] text-[#181512]/80 font-light tracking-wide">
+          <p className="text-[12px] text-[#1A0C06]/80 font-light tracking-wide">
             New to The Common?{" "}
-            <span className="font-medium text-[#181512]">Two classes for £25</span>
-            <span className="text-[#181512]/55"> — valid for 14 days</span>
+            <span className="font-medium text-[#1A0C06]">Three classes for £25</span>
+            <span className="text-[#1A0C06]/55"> — valid for 14 days</span>
           </p>
           <Link
             href="/schedule"
-            className="shrink-0 text-[10px] tracking-[0.25em] uppercase font-medium text-[#181512]/70 hover:text-[#181512] transition-colors underline underline-offset-4"
+            className="shrink-0 text-[10px] tracking-[0.25em] uppercase font-medium text-[#1A0C06]/70 hover:text-[#1A0C06] transition-colors underline underline-offset-4"
           >
             Book your intro
           </Link>
@@ -139,28 +139,28 @@ export default function HomePage() {
           <div className="lg:col-span-5">
             <div className="rule mb-8" />
             <h2
-              className="text-[clamp(2.2rem,4.5vw,3.8rem)] font-light leading-[1.08] text-[#181512]"
+              className="text-[clamp(2.2rem,4.5vw,3.8rem)] font-light leading-[1.08] text-[#1A0C06]"
               style={{ fontFamily: "var(--font-heading)" }}
             >
               More than a studio —
               <br />
-              <em className="italic text-[#7A6248]">a place to belong.</em>
+              <em className="italic text-[#8B2C12]">a place to belong.</em>
             </h2>
           </div>
           <div className="lg:col-span-6 lg:col-start-7 flex flex-col gap-5 pt-2">
-            <p className="text-[15px] text-[#181512]/60 leading-relaxed font-light">
+            <p className="text-[15px] text-[#1A0C06]/60 leading-relaxed font-light">
               The Common is where movement meets connection. Our reformer Pilates
               classes are led by instructors who know your name, your goals and your
               body — and who show up for you the same way every session.
             </p>
-            <p className="text-[15px] text-[#181512]/60 leading-relaxed font-light">
+            <p className="text-[15px] text-[#1A0C06]/60 leading-relaxed font-light">
               We built The Common for people who believe that how you move matters —
               and that the space and community around that movement matter just as much.
             </p>
             <div className="mt-4">
               <Link
                 href="/about"
-                className="inline-flex items-center gap-2 text-[10px] tracking-[0.25em] uppercase font-medium text-[#283629] hover:text-[#7A6248] transition-colors group"
+                className="inline-flex items-center gap-2 text-[10px] tracking-[0.25em] uppercase font-medium text-[#1E0E07] hover:text-[#8B2C12] transition-colors group"
               >
                 Our story
                 <ArrowRight size={12} className="group-hover:translate-x-1 transition-transform" />
@@ -171,13 +171,13 @@ export default function HomePage() {
       </section>
 
       {/* ── THE PRACTICE ─────────────────────────────────────────── */}
-      <section className="py-20 px-6 lg:px-12 bg-[#F2EDE5]">
+      <section className="py-20 px-6 lg:px-12 bg-[#F3EAE3]">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-14 gap-4">
             <div>
               <div className="rule mb-6" />
               <h2
-                className="text-[clamp(2rem,4vw,3rem)] font-light leading-[1.08] text-[#181512]"
+                className="text-[clamp(2rem,4vw,3rem)] font-light leading-[1.08] text-[#1A0C06]"
                 style={{ fontFamily: "var(--font-heading)" }}
               >
                 The Practice
@@ -185,7 +185,7 @@ export default function HomePage() {
             </div>
             <Link
               href="/classes"
-              className="inline-flex items-center gap-2 text-[10px] tracking-[0.25em] uppercase font-medium text-[#181512]/45 hover:text-[#283629] transition-colors group whitespace-nowrap"
+              className="inline-flex items-center gap-2 text-[10px] tracking-[0.25em] uppercase font-medium text-[#1A0C06]/45 hover:text-[#1E0E07] transition-colors group whitespace-nowrap"
             >
               All sessions
               <ArrowRight size={11} className="group-hover:translate-x-1 transition-transform" />
@@ -193,33 +193,33 @@ export default function HomePage() {
           </div>
 
           {/* Class list — editorial table style */}
-          <div className="flex flex-col divide-y divide-[#E2D9CE]">
+          <div className="flex flex-col divide-y divide-[#E8D5CC]">
             {classes.map((c, i) => (
               <Link
                 key={c.name}
                 href={c.href}
-                className="group grid grid-cols-12 gap-4 py-7 hover:bg-[#E2D9CE]/40 transition-colors -mx-4 px-4"
+                className="group grid grid-cols-12 gap-4 py-7 hover:bg-[#E8D5CC]/40 transition-colors -mx-4 px-4"
               >
-                <span className="col-span-1 text-[11px] text-[#B89A78] font-light self-center hidden sm:block">
+                <span className="col-span-1 text-[11px] text-[#AE3717] font-light self-center hidden sm:block">
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 <div className="col-span-12 sm:col-span-3 self-center">
                   <p
-                    className="text-[1.6rem] font-light text-[#181512] leading-none"
+                    className="text-[1.6rem] font-light text-[#1A0C06] leading-none"
                     style={{ fontFamily: "var(--font-heading)" }}
                   >
                     {c.name}
                   </p>
-                  <p className="text-[10px] tracking-[0.2em] uppercase text-[#B89A78] mt-1">{c.level}</p>
+                  <p className="text-[10px] tracking-[0.2em] uppercase text-[#AE3717] mt-1">{c.level}</p>
                 </div>
-                <p className="col-span-12 sm:col-span-5 text-[13px] text-[#181512]/55 font-light leading-relaxed self-center">
+                <p className="col-span-12 sm:col-span-5 text-[13px] text-[#1A0C06]/55 font-light leading-relaxed self-center">
                   {c.line}
                 </p>
                 <div className="col-span-12 sm:col-span-2 flex sm:flex-col items-center sm:items-end justify-between sm:justify-center gap-2">
-                  <span className="text-[11px] text-[#181512]/35 font-light">{c.duration}</span>
+                  <span className="text-[11px] text-[#1A0C06]/35 font-light">{c.duration}</span>
                   <ArrowRight
                     size={14}
-                    className="text-[#B89A78]/0 group-hover:text-[#B89A78] transition-colors"
+                    className="text-[#AE3717]/0 group-hover:text-[#AE3717] transition-colors"
                   />
                 </div>
               </Link>
@@ -229,32 +229,32 @@ export default function HomePage() {
       </section>
 
       {/* ── RESERVE CTA ──────────────────────────────────────────── */}
-      <section className="py-28 px-6 lg:px-12 bg-[#181512]">
+      <section className="py-28 px-6 lg:px-12 bg-[#1A0C06]">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
-            <p className="text-[10px] tracking-[0.4em] uppercase text-[#B89A78] font-light mb-6">
+            <p className="text-[10px] tracking-[0.4em] uppercase text-[#AE3717] font-light mb-6">
               Online booking via Momence
             </p>
             <h2
-              className="text-[clamp(2rem,4vw,3.5rem)] font-light leading-[1.08] text-[#F9F6F1]"
+              className="text-[clamp(2rem,4vw,3.5rem)] font-light leading-[1.08] text-[#FAF7F2]"
               style={{ fontFamily: "var(--font-heading)" }}
             >
               Your schedule,
               <br />
-              <em className="italic text-[#B89A78]">reserved in seconds.</em>
+              <em className="italic text-[#AE3717]">reserved in seconds.</em>
             </h2>
           </div>
           <div className="flex flex-col sm:flex-row lg:flex-col xl:flex-row gap-4">
             <Link
               href="/schedule"
-              className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-[#B89A78] text-[#181512] text-[10px] tracking-[0.25em] uppercase font-medium hover:bg-[#F9F6F1] transition-colors duration-300 group"
+              className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-[#AE3717] text-[#1A0C06] text-[10px] tracking-[0.25em] uppercase font-medium hover:bg-[#FAF7F2] transition-colors duration-300 group"
             >
               View Schedule
               <ArrowRight size={13} className="group-hover:translate-x-1 transition-transform" />
             </Link>
             <Link
               href="/pricing"
-              className="inline-flex items-center justify-center px-8 py-4 border border-[#F9F6F1]/15 text-[#F9F6F1]/60 text-[10px] tracking-[0.25em] uppercase font-medium hover:border-[#B89A78]/60 hover:text-[#B89A78] transition-colors duration-300"
+              className="inline-flex items-center justify-center px-8 py-4 border border-[#FAF7F2]/15 text-[#FAF7F2]/60 text-[10px] tracking-[0.25em] uppercase font-medium hover:border-[#AE3717]/60 hover:text-[#AE3717] transition-colors duration-300"
             >
               Membership &amp; Passes
             </Link>
@@ -268,21 +268,21 @@ export default function HomePage() {
           <div className="mb-14">
             <div className="rule mb-6" />
             <h2
-              className="text-[clamp(2rem,4vw,3rem)] font-light leading-[1.08] text-[#181512]"
+              className="text-[clamp(2rem,4vw,3rem)] font-light leading-[1.08] text-[#1A0C06]"
               style={{ fontFamily: "var(--font-heading)" }}
             >
               In their words
             </h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-[#E2D9CE]">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-[#E8D5CC]">
             {testimonials.map((t) => (
-              <div key={t.name} className="bg-[#F9F6F1] p-10 flex flex-col gap-6">
-                <p className="text-[15px] text-[#181512]/60 leading-relaxed font-light flex-1 italic">
+              <div key={t.name} className="bg-[#FAF7F2] p-10 flex flex-col gap-6">
+                <p className="text-[15px] text-[#1A0C06]/60 leading-relaxed font-light flex-1 italic">
                   &ldquo;{t.quote}&rdquo;
                 </p>
-                <div className="pt-6 border-t border-[#E2D9CE]">
-                  <p className="text-[13px] font-medium text-[#181512]">{t.name}</p>
-                  <p className="text-[11px] text-[#B89A78] tracking-wide mt-0.5">{t.detail}</p>
+                <div className="pt-6 border-t border-[#E8D5CC]">
+                  <p className="text-[13px] font-medium text-[#1A0C06]">{t.name}</p>
+                  <p className="text-[11px] text-[#AE3717] tracking-wide mt-0.5">{t.detail}</p>
                 </div>
               </div>
             ))}
@@ -291,23 +291,23 @@ export default function HomePage() {
       </section>
 
       {/* ── FINAL CTA ────────────────────────────────────────────── */}
-      <section className="py-36 px-6 lg:px-12 bg-[#F2EDE5]">
+      <section className="py-36 px-6 lg:px-12 bg-[#F3EAE3]">
         <div className="max-w-2xl mx-auto text-center">
           <div className="rule mx-auto mb-10" />
           <h2
-            className="text-[clamp(2.5rem,6vw,5rem)] font-light leading-[1.02] text-[#181512] mb-8"
+            className="text-[clamp(2.5rem,6vw,5rem)] font-light leading-[1.02] text-[#1A0C06] mb-8"
             style={{ fontFamily: "var(--font-heading)" }}
           >
             Your first class
             <br />
-            <em className="italic text-[#283629]">starts here.</em>
+            <em className="italic text-[#1E0E07]">starts here.</em>
           </h2>
-          <p className="text-[14px] text-[#181512]/45 max-w-sm mx-auto mb-12 font-light leading-relaxed">
-            Two classes for £25. No commitment — just show up, grip socks on, and move.
+          <p className="text-[14px] text-[#1A0C06]/45 max-w-sm mx-auto mb-12 font-light leading-relaxed">
+            Three classes for £25. No commitment — just show up, grip socks on, and move.
           </p>
           <Link
             href="/schedule"
-            className="inline-flex items-center gap-3 px-10 py-4 bg-[#283629] text-[#F9F6F1] text-[10px] tracking-[0.25em] uppercase font-medium hover:bg-[#181512] transition-colors duration-300 group"
+            className="inline-flex items-center gap-3 px-10 py-4 bg-[#1E0E07] text-[#FAF7F2] text-[10px] tracking-[0.25em] uppercase font-medium hover:bg-[#1A0C06] transition-colors duration-300 group"
           >
             Reserve Your Intro Class
             <ArrowRight size={13} className="group-hover:translate-x-1 transition-transform" />

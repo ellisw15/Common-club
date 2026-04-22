@@ -32,7 +32,7 @@ export function Navigation() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         solidBg
-          ? "bg-[#F9F6F1]/96 backdrop-blur-sm border-b border-[#E2D9CE]/60"
+          ? "bg-[#FAF7F2]/96 backdrop-blur-sm border-b border-[#E8D5CC]/60"
           : "bg-transparent"
       }`}
     >
@@ -42,7 +42,7 @@ export function Navigation() {
         <Link href="/" onClick={() => setOpen(false)} className="flex flex-col leading-none group">
           <span
             className={`text-[1.35rem] font-light tracking-[0.22em] uppercase transition-colors duration-300 ${
-              solidBg ? "text-[#181512]" : "text-[#F9F6F1]"
+              solidBg ? "text-[#1A0C06]" : "text-[#FAF7F2]"
             }`}
             style={{ fontFamily: "var(--font-heading)" }}
           >
@@ -50,7 +50,7 @@ export function Navigation() {
           </span>
           <span
             className={`text-[9px] tracking-[0.38em] uppercase font-light transition-colors duration-300 ${
-              solidBg ? "text-[#B89A78]" : "text-[#B89A78]/80"
+              solidBg ? "text-[#AE3717]" : "text-[#AE3717]/80"
             }`}
           >
             Stoneygate · Leicester
@@ -66,11 +66,11 @@ export function Navigation() {
                 className={`text-[10.5px] tracking-[0.22em] uppercase font-medium transition-colors duration-200 ${
                   solidBg
                     ? pathname === link.href
-                      ? "text-[#181512]"
-                      : "text-[#181512]/45 hover:text-[#181512]"
+                      ? "text-[#1A0C06]"
+                      : "text-[#1A0C06]/45 hover:text-[#1A0C06]"
                     : pathname === link.href
-                      ? "text-[#F9F6F1]"
-                      : "text-[#F9F6F1]/50 hover:text-[#F9F6F1]"
+                      ? "text-[#FAF7F2]"
+                      : "text-[#FAF7F2]/50 hover:text-[#FAF7F2]"
                 }`}
               >
                 {link.label}
@@ -85,8 +85,8 @@ export function Navigation() {
             href="/schedule"
             className={`inline-block px-6 py-2 text-[10px] tracking-[0.22em] uppercase font-medium border transition-all duration-200 ${
               solidBg
-                ? "border-[#283629] text-[#283629] hover:bg-[#283629] hover:text-[#F9F6F1]"
-                : "border-[#F9F6F1]/60 text-[#F9F6F1] hover:bg-[#F9F6F1] hover:text-[#181512]"
+                ? "border-[#1E0E07] text-[#1E0E07] hover:bg-[#1E0E07] hover:text-[#FAF7F2]"
+                : "border-[#FAF7F2]/60 text-[#FAF7F2] hover:bg-[#FAF7F2] hover:text-[#1A0C06]"
             }`}
           >
             Reserve
@@ -95,7 +95,7 @@ export function Navigation() {
 
         {/* Mobile toggle */}
         <button
-          className={`lg:hidden p-2 transition-colors ${solidBg ? "text-[#181512]" : "text-[#F9F6F1]"}`}
+          className={`lg:hidden p-2 transition-colors ${solidBg ? "text-[#1A0C06]" : "text-[#FAF7F2]"}`}
           onClick={() => setOpen(!open)}
           aria-label="Toggle menu"
         >
@@ -107,7 +107,7 @@ export function Navigation() {
       <div
         className={`lg:hidden overflow-hidden transition-all duration-300 ${
           open ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
-        } bg-[#F9F6F1] border-t border-[#E2D9CE]/60`}
+        } bg-[#FAF7F2] border-t border-[#E8D5CC]/60`}
       >
         <div className="px-6 py-8 flex flex-col gap-5">
           {navLinks.map((link) => (
@@ -115,16 +115,16 @@ export function Navigation() {
               key={link.href}
               href={link.href}
               onClick={() => setOpen(false)}
-              className="text-[11px] tracking-[0.25em] uppercase font-medium text-[#181512]/50 hover:text-[#181512] transition-colors"
+              className="text-[11px] tracking-[0.25em] uppercase font-medium text-[#1A0C06]/50 hover:text-[#1A0C06] transition-colors"
             >
               {link.label}
             </Link>
           ))}
-          <div className="mt-2 pt-5 border-t border-[#E2D9CE]">
+          <div className="mt-2 pt-5 border-t border-[#E8D5CC]">
             <Link
               href="/schedule"
               onClick={() => setOpen(false)}
-              className="inline-block w-full text-center px-6 py-3 border border-[#283629] text-[#283629] text-[10px] tracking-[0.22em] uppercase font-medium hover:bg-[#283629] hover:text-[#F9F6F1] transition-colors"
+              className="inline-block w-full text-center px-6 py-3 border border-[#1E0E07] text-[#1E0E07] text-[10px] tracking-[0.22em] uppercase font-medium hover:bg-[#1E0E07] hover:text-[#FAF7F2] transition-colors"
             >
               Reserve Your Place
             </Link>

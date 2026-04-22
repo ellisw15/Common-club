@@ -63,18 +63,18 @@ export default function ClubRulesPage() {
   return (
     <>
       {/* Header */}
-      <section className="pt-36 pb-20 px-6 lg:px-12 bg-[#181512]">
+      <section className="pt-36 pb-20 px-6 lg:px-12 bg-[#1A0C06]">
         <div className="max-w-7xl mx-auto">
-          <p className="text-[10px] tracking-[0.5em] uppercase text-[#B89A78] font-light mb-6">
+          <p className="text-[10px] tracking-[0.5em] uppercase text-[#AE3717] font-light mb-6">
             Studio Policies
           </p>
           <h1
-            className="text-[clamp(2.5rem,6vw,5rem)] font-light leading-[1.02] text-[#F9F6F1]"
+            className="text-[clamp(2.5rem,6vw,5rem)] font-light leading-[1.02] text-[#FAF7F2]"
             style={{ fontFamily: "var(--font-heading)" }}
           >
             Studio Rules
           </h1>
-          <p className="mt-5 text-[14px] text-[#F9F6F1]/40 max-w-lg font-light leading-relaxed">
+          <p className="mt-5 text-[14px] text-[#FAF7F2]/40 max-w-lg font-light leading-relaxed">
             Our policies exist to keep every member safe, respected and able to
             get the very best from their time at The Common.
           </p>
@@ -83,21 +83,21 @@ export default function ClubRulesPage() {
 
       {/* Rules */}
       <section className="py-16 px-6 lg:px-12">
-        <div className="max-w-3xl mx-auto flex flex-col gap-px bg-[#E2D9CE]">
+        <div className="max-w-3xl mx-auto flex flex-col gap-px bg-[#E8D5CC]">
           {rules.map((rule) => (
             <div
               key={rule.n}
-              className="bg-[#F9F6F1] px-8 py-8 grid grid-cols-[2.5rem_1fr] gap-6"
+              className="bg-[#FAF7F2] px-8 py-8 grid grid-cols-[2.5rem_1fr] gap-6"
             >
               <span
-                className="text-[11px] text-[#B89A78] font-light pt-0.5"
+                className="text-[11px] text-[#AE3717] font-light pt-0.5"
                 style={{ fontFamily: "var(--font-heading)" }}
               >
                 {rule.n}
               </span>
               <div>
-                <h3 className="text-[13px] font-medium text-[#181512] mb-2">{rule.title}</h3>
-                <p className="text-[13px] text-[#181512]/50 leading-relaxed font-light">{rule.body}</p>
+                <h3 className="text-[13px] font-medium text-[#1A0C06] mb-2">{rule.title}</h3>
+                <p className="text-[13px] text-[#1A0C06]/50 leading-relaxed font-light">{rule.body}</p>
               </div>
             </div>
           ))}
@@ -105,15 +105,15 @@ export default function ClubRulesPage() {
       </section>
 
       {/* Note */}
-      <section className="py-14 px-6 lg:px-12 bg-[#F2EDE5] text-center">
-        <p className="text-[12px] text-[#181512]/40 max-w-xl mx-auto leading-relaxed font-light mb-6">
+      <section className="py-14 px-6 lg:px-12 bg-[#F3EAE3] text-center">
+        <p className="text-[12px] text-[#1A0C06]/40 max-w-xl mx-auto leading-relaxed font-light mb-6">
           By booking a class at The Common you agree to these policies. We reserve
           the right to refuse entry or cancel membership for persistent breaches of
           studio rules.
         </p>
         <Link
           href="/contact"
-          className="text-[10px] tracking-[0.25em] uppercase font-medium text-[#7A6248] hover:text-[#283629] transition-colors"
+          className="text-[10px] tracking-[0.25em] uppercase font-medium text-[#8B2C12] hover:text-[#1E0E07] transition-colors"
         >
           Questions? Get in touch →
         </Link>

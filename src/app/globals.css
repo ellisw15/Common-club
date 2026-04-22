@@ -1,14 +1,14 @@
 @import "tailwindcss";
 
 :root {
-  --cream:    #F9F6F1;
-  --warm:     #F2EDE5;
-  --stone:    #E2D9CE;
-  --clay:     #B89A78;
-  --bark:     #7A6248;
-  --forest:   #283629;
+  --cream:    #FAF7F2;
+  --warm:     #F3EAE3;
+  --stone:    #E8D5CC;
+  --clay:     #AE3717;
+  --bark:     #8B2C12;
+  --forest:   #1E0E07;
   --charcoal: #262420;
-  --ink:      #181512;
+  --ink:      #1A0C06;
 }
 
 @theme inline {
@@ -30,11 +30,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Thin rule utility */
+/* Thin rule utility — brand red */
 .rule {
   width: 40px;
   height: 1px;
-  background: var(--clay);
+  background: #AE3717;
 }
 
 /* Fade-in on scroll — no JS, pure CSS */

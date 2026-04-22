@@ -20,7 +20,7 @@ const classes = [
     duration: "50 min",
     intensity: "Low – Medium",
     dark: false,
-    bg: "bg-[#F9F6F1]",
+    bg: "bg-[#FAF7F2]",
   },
   {
     id: "elevate",
@@ -33,7 +33,7 @@ const classes = [
     duration: "50 min",
     intensity: "Medium – High",
     dark: true,
-    bg: "bg-[#283629]",
+    bg: "bg-[#1E0E07]",
   },
   {
     id: "sculpt",
@@ -46,7 +46,7 @@ const classes = [
     duration: "50 min",
     intensity: "High",
     dark: true,
-    bg: "bg-[#181512]",
+    bg: "bg-[#1A0C06]",
   },
   {
     id: "barre",
@@ -59,7 +59,7 @@ const classes = [
     duration: "45 min",
     intensity: "Low – Medium",
     dark: false,
-    bg: "bg-[#F2EDE5]",
+    bg: "bg-[#F3EAE3]",
   },
   {
     id: "prenatal",
@@ -72,7 +72,7 @@ const classes = [
     duration: "45 min",
     intensity: "Gentle",
     dark: false,
-    bg: "bg-[#E2D9CE]",
+    bg: "bg-[#E8D5CC]",
   },
 ];
 
@@ -84,12 +84,12 @@ export default function ClassesPage() {
         <div className="max-w-7xl mx-auto">
           <div className="rule mb-8" />
           <h1
-            className="text-[clamp(2.5rem,6vw,5rem)] font-light leading-[1.02] text-[#181512]"
+            className="text-[clamp(2.5rem,6vw,5rem)] font-light leading-[1.02] text-[#1A0C06]"
             style={{ fontFamily: "var(--font-heading)" }}
           >
             The Practice
           </h1>
-          <p className="mt-5 text-[15px] text-[#181512]/50 max-w-xl font-light leading-relaxed">
+          <p className="mt-5 text-[15px] text-[#1A0C06]/50 max-w-xl font-light leading-relaxed">
             Five classes, each with a distinct purpose. Find your level —
             then grow beyond it.
           </p>
@@ -99,11 +99,11 @@ export default function ClassesPage() {
       {/* Class panels */}
       <div className="flex flex-col">
         {classes.map((cls) => {
-          const tc   = cls.dark ? "text-[#F9F6F1]"    : "text-[#181512]";
-          const sc   = cls.dark ? "text-[#F9F6F1]/50"  : "text-[#181512]/50";
-          const ac   = cls.dark ? "text-[#B89A78]"     : "text-[#7A6248]";
-          const borC = cls.dark ? "border-[#F9F6F1]/12" : "border-[#181512]/10";
-          const ruleC= cls.dark ? "bg-[#B89A78]"       : "bg-[#B89A78]";
+          const tc   = cls.dark ? "text-[#FAF7F2]"    : "text-[#1A0C06]";
+          const sc   = cls.dark ? "text-[#FAF7F2]/50"  : "text-[#1A0C06]/50";
+          const ac   = cls.dark ? "text-[#AE3717]"     : "text-[#8B2C12]";
+          const borC = cls.dark ? "border-[#FAF7F2]/12" : "border-[#1A0C06]/10";
+          const ruleC= cls.dark ? "bg-[#AE3717]"       : "bg-[#AE3717]";
 
           return (
             <div key={cls.id} id={cls.id} className={`${cls.bg} px-6 lg:px-12 py-16 lg:py-20`}>
@@ -150,8 +150,8 @@ export default function ClassesPage() {
                     href="/schedule"
                     className={`inline-flex items-center gap-2 text-[10px] tracking-[0.25em] uppercase font-medium transition-colors group ${
                       cls.dark
-                        ? "text-[#B89A78] hover:text-[#F9F6F1]"
-                        : "text-[#283629] hover:text-[#7A6248]"
+                        ? "text-[#AE3717] hover:text-[#FAF7F2]"
+                        : "text-[#1E0E07] hover:text-[#8B2C12]"
                     }`}
                   >
                     Reserve this class
@@ -165,16 +165,16 @@ export default function ClassesPage() {
       </div>
 
       {/* FAQ */}
-      <section className="py-24 px-6 lg:px-12 bg-[#F2EDE5]">
+      <section className="py-24 px-6 lg:px-12 bg-[#F3EAE3]">
         <div className="max-w-3xl mx-auto">
           <div className="rule mb-8" />
           <h2
-            className="text-[clamp(1.8rem,3vw,2.5rem)] font-light text-[#181512] mb-12"
+            className="text-[clamp(1.8rem,3vw,2.5rem)] font-light text-[#1A0C06] mb-12"
             style={{ fontFamily: "var(--font-heading)" }}
           >
             Common questions
           </h2>
-          <div className="flex flex-col gap-px bg-[#E2D9CE]">
+          <div className="flex flex-col gap-px bg-[#E8D5CC]">
             {[
               {
                 q: "What should I wear?",
@@ -193,9 +193,9 @@ export default function ClassesPage() {
                 a: "Via the Momence app, up to 24 hours before your class at no charge. Cancellations inside 24 hours forfeit the class credit.",
               },
             ].map((item) => (
-              <div key={item.q} className="bg-[#F9F6F1] px-8 py-7">
-                <h3 className="text-[13px] font-medium text-[#181512] mb-2">{item.q}</h3>
-                <p className="text-[13px] text-[#181512]/50 leading-relaxed font-light">{item.a}</p>
+              <div key={item.q} className="bg-[#FAF7F2] px-8 py-7">
+                <h3 className="text-[13px] font-medium text-[#1A0C06] mb-2">{item.q}</h3>
+                <p className="text-[13px] text-[#1A0C06]/50 leading-relaxed font-light">{item.a}</p>
               </div>
             ))}
           </div>

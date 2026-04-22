@@ -36,16 +36,16 @@ export default function AboutPage() {
           <div className="lg:col-span-6">
             <div className="rule mb-8" />
             <h1
-              className="text-[clamp(2.5rem,6vw,5rem)] font-light leading-[1.02] text-[#181512]"
+              className="text-[clamp(2.5rem,6vw,5rem)] font-light leading-[1.02] text-[#1A0C06]"
               style={{ fontFamily: "var(--font-heading)" }}
             >
               Built for community,
               <br />
-              <em className="italic text-[#7A6248]">rooted in movement.</em>
+              <em className="italic text-[#8B2C12]">rooted in movement.</em>
             </h1>
           </div>
           <div className="lg:col-span-5 lg:col-start-8">
-            <p className="text-[15px] text-[#181512]/55 leading-relaxed font-light">
+            <p className="text-[15px] text-[#1A0C06]/55 leading-relaxed font-light">
               The Common was born from a simple belief: that the best studio
               experiences are built on connection — between instructor and student,
               between movement and mindfulness, and between the people who share
@@ -56,28 +56,28 @@ export default function AboutPage() {
       </section>
 
       {/* Story */}
-      <section className="py-20 px-6 lg:px-12 bg-[#F2EDE5]">
+      <section className="py-20 px-6 lg:px-12 bg-[#F3EAE3]">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
           <div className="flex flex-col gap-6">
-            <p className="text-[15px] text-[#181512]/60 leading-relaxed font-light">
+            <p className="text-[15px] text-[#1A0C06]/60 leading-relaxed font-light">
               We opened our doors in Stoneygate, Leicester, with one clear intention:
               to create a studio that felt unlike anything else in the city. A place
               that was rigorous but warm, expert but approachable, and above all —
               genuinely community-led.
             </p>
-            <p className="text-[15px] text-[#181512]/60 leading-relaxed font-light">
+            <p className="text-[15px] text-[#1A0C06]/60 leading-relaxed font-light">
               Our instructors are handpicked for their expertise, warmth and ability
               to meet you where you are. Whether you're stepping onto a reformer for
               the first time or you've been moving for years — you'll be seen here.
             </p>
-            <p className="text-[15px] text-[#181512]/60 leading-relaxed font-light">
+            <p className="text-[15px] text-[#1A0C06]/60 leading-relaxed font-light">
               We believe that how you move is as important as how often you move.
               The Common is for people who care about both.
             </p>
           </div>
 
           {/* Typographic facts panel */}
-          <div className="grid grid-cols-2 gap-px bg-[#E2D9CE]">
+          <div className="grid grid-cols-2 gap-px bg-[#E8D5CC]">
             {[
               { value: "21", label: "Allandale Road" },
               { value: "LE2", label: "Stoneygate" },
@@ -86,15 +86,15 @@ export default function AboutPage() {
             ].map((s) => (
               <div
                 key={s.label}
-                className="bg-[#F9F6F1] py-12 px-8 flex flex-col items-start justify-end gap-2"
+                className="bg-[#FAF7F2] py-12 px-8 flex flex-col items-start justify-end gap-2"
               >
                 <span
-                  className="text-[3rem] leading-none font-light text-[#283629]"
+                  className="text-[3rem] leading-none font-light text-[#1E0E07]"
                   style={{ fontFamily: "var(--font-heading)" }}
                 >
                   {s.value}
                 </span>
-                <span className="text-[10px] tracking-[0.28em] uppercase text-[#181512]/35 font-medium">
+                <span className="text-[10px] tracking-[0.28em] uppercase text-[#1A0C06]/35 font-medium">
                   {s.label}
                 </span>
               </div>
@@ -104,22 +104,22 @@ export default function AboutPage() {
       </section>
 
       {/* Values */}
-      <section className="py-20 px-6 lg:px-12 bg-[#283629]">
+      <section className="py-20 px-6 lg:px-12 bg-[#1E0E07]">
         <div className="max-w-7xl mx-auto">
-          <p className="text-[10px] tracking-[0.5em] uppercase text-[#B89A78] font-light mb-14">
+          <p className="text-[10px] tracking-[0.5em] uppercase text-[#AE3717] font-light mb-14">
             What We Stand For
           </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-px bg-[#F9F6F1]/10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-px bg-[#FAF7F2]/10">
             {values.map((v) => (
-              <div key={v.title} className="bg-[#283629] p-10 lg:p-12">
-                <div className="w-6 h-px bg-[#B89A78] mb-7" />
+              <div key={v.title} className="bg-[#1E0E07] p-10 lg:p-12">
+                <div className="w-6 h-px bg-[#AE3717] mb-7" />
                 <h3
-                  className="text-[1.8rem] font-light text-[#F9F6F1] mb-4"
+                  className="text-[1.8rem] font-light text-[#FAF7F2] mb-4"
                   style={{ fontFamily: "var(--font-heading)" }}
                 >
                   {v.title}
                 </h3>
-                <p className="text-[13px] text-[#F9F6F1]/45 leading-relaxed font-light">{v.body}</p>
+                <p className="text-[13px] text-[#FAF7F2]/45 leading-relaxed font-light">{v.body}</p>
               </div>
             ))}
           </div>
@@ -131,12 +131,12 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto">
           <div className="rule mb-8" />
           <h2
-            className="text-[clamp(2rem,4vw,3rem)] font-light text-[#181512] mb-14"
+            className="text-[clamp(2rem,4vw,3rem)] font-light text-[#1A0C06] mb-14"
             style={{ fontFamily: "var(--font-heading)" }}
           >
-            The people behind<br /><em className="italic text-[#7A6248]">the practice.</em>
+            The people behind<br /><em className="italic text-[#8B2C12]">the practice.</em>
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-[#E2D9CE]">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-[#E8D5CC]">
             {[
               {
                 initials: "LI",
@@ -157,22 +157,22 @@ export default function AboutPage() {
                 bio: "Certified in pre and postnatal exercise, she creates a safe, empowering environment for expectant and new mothers at every stage.",
               },
             ].map((p) => (
-              <div key={p.initials} className="bg-[#F9F6F1] p-10">
-                <div className="w-14 h-14 rounded-full bg-[#E2D9CE] flex items-center justify-center mb-7">
+              <div key={p.initials} className="bg-[#FAF7F2] p-10">
+                <div className="w-14 h-14 rounded-full bg-[#E8D5CC] flex items-center justify-center mb-7">
                   <span
-                    className="text-[1.2rem] font-light text-[#B89A78]"
+                    className="text-[1.2rem] font-light text-[#AE3717]"
                     style={{ fontFamily: "var(--font-heading)" }}
                   >
                     {p.initials}
                   </span>
                 </div>
-                <p className="text-[10px] tracking-[0.28em] uppercase text-[#B89A78] font-medium mb-1">
+                <p className="text-[10px] tracking-[0.28em] uppercase text-[#AE3717] font-medium mb-1">
                   {p.role}
                 </p>
-                <p className="text-[10px] tracking-[0.18em] uppercase text-[#181512]/30 font-light mb-5">
+                <p className="text-[10px] tracking-[0.18em] uppercase text-[#1A0C06]/30 font-light mb-5">
                   {p.classes}
                 </p>
-                <p className="text-[13px] text-[#181512]/50 leading-relaxed font-light">{p.bio}</p>
+                <p className="text-[13px] text-[#1A0C06]/50 leading-relaxed font-light">{p.bio}</p>
               </div>
             ))}
           </div>
@@ -180,29 +180,29 @@ export default function AboutPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-28 px-6 lg:px-12 bg-[#F2EDE5] text-center">
+      <section className="py-28 px-6 lg:px-12 bg-[#F3EAE3] text-center">
         <div className="max-w-xl mx-auto">
           <div className="rule mx-auto mb-10" />
           <h2
-            className="text-[clamp(2rem,4vw,3.5rem)] font-light text-[#181512] mb-6"
+            className="text-[clamp(2rem,4vw,3.5rem)] font-light text-[#1A0C06] mb-6"
             style={{ fontFamily: "var(--font-heading)" }}
           >
             Come and find us.
           </h2>
-          <p className="text-[14px] text-[#181512]/45 mb-12 font-light leading-relaxed">
+          <p className="text-[14px] text-[#1A0C06]/45 mb-12 font-light leading-relaxed">
             The best way to understand The Common is to experience it. Book your intro class and see for yourself.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/schedule"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#283629] text-[#F9F6F1] text-[10px] tracking-[0.25em] uppercase font-medium hover:bg-[#181512] transition-colors group"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#1E0E07] text-[#FAF7F2] text-[10px] tracking-[0.25em] uppercase font-medium hover:bg-[#1A0C06] transition-colors group"
             >
               Reserve a class
               <ArrowRight size={11} className="group-hover:translate-x-0.5 transition-transform" />
             </Link>
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center px-8 py-4 border border-[#181512]/18 text-[#181512]/60 text-[10px] tracking-[0.25em] uppercase font-medium hover:border-[#283629] hover:text-[#283629] transition-colors"
+              className="inline-flex items-center justify-center px-8 py-4 border border-[#1A0C06]/18 text-[#1A0C06]/60 text-[10px] tracking-[0.25em] uppercase font-medium hover:border-[#1E0E07] hover:text-[#1E0E07] transition-colors"
             >
               Get in touch
             </Link>
