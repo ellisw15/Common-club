@@ -3,15 +3,15 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "About | The Common",
+  title: "About — Our Story",
   description:
-    "The story behind The Common — a reformer Pilates studio and community cafe in Stoneygate, Leicester.",
+    "The story behind The Common — a reformer Pilates studio and community in Stoneygate, Leicester.",
 };
 
 const values = [
   {
     title: "Movement",
-    body: "We believe movement is medicine. Every class at The Common is designed to be purposeful — not just exercise, but a practice that connects mind and body.",
+    body: "We believe movement is medicine. Every class at The Common is purposeful — not just exercise, but a practice that reconnects mind and body.",
   },
   {
     title: "Community",
@@ -23,7 +23,7 @@ const values = [
   },
   {
     title: "Environment",
-    body: "From the studio floor to the cafe upstairs, every detail of The Common has been considered. Beautiful spaces inspire beautiful movement.",
+    body: "Every detail of The Common has been considered. Beautiful spaces inspire beautiful movement — and we take that seriously.",
   },
 ];
 
@@ -31,90 +31,95 @@ export default function AboutPage() {
   return (
     <>
       {/* Header */}
-      <section className="pt-36 pb-16 px-6 lg:px-10 bg-[#FAF7F2]">
-        <div className="max-w-7xl mx-auto max-w-3xl">
-          <p className="text-[11px] tracking-[0.4em] uppercase text-[#7C6548] font-medium mb-4">
-            Our Story
-          </p>
-          <h1
-            className="text-[clamp(2.5rem,6vw,5rem)] font-light leading-[1.05] text-[#1A1814]"
-            style={{ fontFamily: "var(--font-heading)" }}
-          >
-            Built for community,<br />
-            <em className="italic">rooted in movement.</em>
-          </h1>
+      <section className="pt-36 pb-24 px-6 lg:px-12">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 items-end">
+          <div className="lg:col-span-6">
+            <div className="rule mb-8" />
+            <h1
+              className="text-[clamp(2.5rem,6vw,5rem)] font-light leading-[1.02] text-[#181512]"
+              style={{ fontFamily: "var(--font-heading)" }}
+            >
+              Built for community,
+              <br />
+              <em className="italic text-[#7A6248]">rooted in movement.</em>
+            </h1>
+          </div>
+          <div className="lg:col-span-5 lg:col-start-8">
+            <p className="text-[15px] text-[#181512]/55 leading-relaxed font-light">
+              The Common was born from a simple belief: that the best studio
+              experiences are built on connection — between instructor and student,
+              between movement and mindfulness, and between the people who share
+              the space.
+            </p>
+          </div>
         </div>
       </section>
 
       {/* Story */}
-      <section className="py-16 px-6 lg:px-10">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16">
+      <section className="py-20 px-6 lg:px-12 bg-[#F2EDE5]">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
           <div className="flex flex-col gap-6">
-            <p className="text-lg text-[#1A1814]/70 leading-relaxed font-light">
-              The Common was born from a simple belief: that the best studio experiences
-              are built on connection — between instructor and student, between
-              movement and mindfulness, and between the people who share the space.
+            <p className="text-[15px] text-[#181512]/60 leading-relaxed font-light">
+              We opened our doors in Stoneygate, Leicester, with one clear intention:
+              to create a studio that felt unlike anything else in the city. A place
+              that was rigorous but warm, expert but approachable, and above all —
+              genuinely community-led.
             </p>
-            <p className="text-base text-[#1A1814]/60 leading-relaxed font-light">
-              We opened our doors in Stoneygate, Leicester, with a reformer studio
-              downstairs and a community cafe upstairs — because we wanted The Common
-              to be a destination, not just a drop-in. A place you leave feeling
-              better in every way.
-            </p>
-            <p className="text-base text-[#1A1814]/60 leading-relaxed font-light">
+            <p className="text-[15px] text-[#181512]/60 leading-relaxed font-light">
               Our instructors are handpicked for their expertise, warmth and ability
-              to read a room. Whether you&apos;re stepping onto a reformer for the first
-              time or you&apos;ve been moving for years, you&apos;ll be met where you are.
+              to meet you where you are. Whether you're stepping onto a reformer for
+              the first time or you've been moving for years — you'll be seen here.
+            </p>
+            <p className="text-[15px] text-[#181512]/60 leading-relaxed font-light">
+              We believe that how you move is as important as how often you move.
+              The Common is for people who care about both.
             </p>
           </div>
-          <div className="bg-[#F0EDE8] p-12 flex flex-col justify-between gap-10">
-            <div>
-              <span
-                className="block text-6xl font-light text-[#C4A882] leading-none mb-2"
-                style={{ fontFamily: "var(--font-heading)" }}
+
+          {/* Typographic facts panel */}
+          <div className="grid grid-cols-2 gap-px bg-[#E2D9CE]">
+            {[
+              { value: "21", label: "Allandale Road" },
+              { value: "LE2", label: "Stoneygate" },
+              { value: "5", label: "Class types" },
+              { value: "50′", label: "Per session" },
+            ].map((s) => (
+              <div
+                key={s.label}
+                className="bg-[#F9F6F1] py-12 px-8 flex flex-col items-start justify-end gap-2"
               >
-                21
-              </span>
-              <p className="text-sm text-[#1A1814]/50">Allandale Road, Stoneygate</p>
-            </div>
-            <div>
-              <span
-                className="block text-6xl font-light text-[#C4A882] leading-none mb-2"
-                style={{ fontFamily: "var(--font-heading)" }}
-              >
-                LE2
-              </span>
-              <p className="text-sm text-[#1A1814]/50">Leicester&apos;s most neighbourly postcode</p>
-            </div>
-            <div>
-              <span
-                className="block text-6xl font-light text-[#C4A882] leading-none mb-2"
-                style={{ fontFamily: "var(--font-heading)" }}
-              >
-                2↑
-              </span>
-              <p className="text-sm text-[#1A1814]/50">Studio below, cafe above</p>
-            </div>
+                <span
+                  className="text-[3rem] leading-none font-light text-[#283629]"
+                  style={{ fontFamily: "var(--font-heading)" }}
+                >
+                  {s.value}
+                </span>
+                <span className="text-[10px] tracking-[0.28em] uppercase text-[#181512]/35 font-medium">
+                  {s.label}
+                </span>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* Values */}
-      <section className="py-20 px-6 lg:px-10 bg-[#2D3B2E]">
+      <section className="py-20 px-6 lg:px-12 bg-[#283629]">
         <div className="max-w-7xl mx-auto">
-          <p className="text-[11px] tracking-[0.4em] uppercase text-[#C4A882] font-medium mb-12">
+          <p className="text-[10px] tracking-[0.5em] uppercase text-[#B89A78] font-light mb-14">
             What We Stand For
           </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-px bg-[#FAF7F2]/10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-px bg-[#F9F6F1]/10">
             {values.map((v) => (
-              <div key={v.title} className="bg-[#2D3B2E] p-10">
+              <div key={v.title} className="bg-[#283629] p-10 lg:p-12">
+                <div className="w-6 h-px bg-[#B89A78] mb-7" />
                 <h3
-                  className="text-2xl font-light text-[#FAF7F2] mb-4"
+                  className="text-[1.8rem] font-light text-[#F9F6F1] mb-4"
                   style={{ fontFamily: "var(--font-heading)" }}
                 >
                   {v.title}
                 </h3>
-                <p className="text-sm text-[#FAF7F2]/55 leading-relaxed font-light">{v.body}</p>
+                <p className="text-[13px] text-[#F9F6F1]/45 leading-relaxed font-light">{v.body}</p>
               </div>
             ))}
           </div>
@@ -122,52 +127,52 @@ export default function AboutPage() {
       </section>
 
       {/* Instructors */}
-      <section className="py-20 px-6 lg:px-10">
+      <section className="py-20 px-6 lg:px-12">
         <div className="max-w-7xl mx-auto">
-          <p className="text-[11px] tracking-[0.4em] uppercase text-[#7C6548] font-medium mb-4">
-            The Team
-          </p>
+          <div className="rule mb-8" />
           <h2
-            className="text-[clamp(2rem,4vw,3rem)] font-light text-[#1A1814] mb-12"
+            className="text-[clamp(2rem,4vw,3rem)] font-light text-[#181512] mb-14"
             style={{ fontFamily: "var(--font-heading)" }}
           >
-            Expert instructors,<br />genuine people.
+            The people behind<br /><em className="italic text-[#7A6248]">the practice.</em>
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-[#E8E0D4]">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-[#E2D9CE]">
             {[
               {
-                name: "Lead Instructor",
-                role: "Reformer Pilates · Foundation & Elevate",
-                bio: "Fully certified in STOTT Pilates with over 8 years teaching reformer. Passionate about posture, breathwork and building confidence on the machine.",
+                initials: "LI",
+                role: "Reformer Pilates",
+                classes: "Foundation · Elevate",
+                bio: "Certified in STOTT Pilates with over eight years teaching reformer. Passionate about posture, breathwork and building lasting confidence on the machine.",
               },
               {
-                name: "Movement Specialist",
-                role: "Sculpt · Barre",
+                initials: "MS",
+                role: "Movement Specialist",
+                classes: "Sculpt · Barre",
                 bio: "A background in contemporary dance brought her to Pilates. Her classes are precise, demanding and deeply satisfying.",
               },
               {
-                name: "Pre & Postnatal Specialist",
-                role: "Prenatal · Foundation",
-                bio: "Certified in pre and postnatal exercise, she creates a safe, empowering environment for expectant and new mothers.",
+                initials: "PS",
+                role: "Pre &amp; Postnatal",
+                classes: "Prenatal · Foundation",
+                bio: "Certified in pre and postnatal exercise, she creates a safe, empowering environment for expectant and new mothers at every stage.",
               },
-            ].map((instructor) => (
-              <div key={instructor.name} className="bg-[#FAF7F2] p-10">
-                {/* Avatar placeholder */}
-                <div className="w-16 h-16 rounded-full bg-[#E8E0D4] mb-6 flex items-center justify-center">
-                  <span className="text-2xl text-[#C4A882]" style={{ fontFamily: "var(--font-heading)" }}>
-                    {instructor.name[0]}
+            ].map((p) => (
+              <div key={p.initials} className="bg-[#F9F6F1] p-10">
+                <div className="w-14 h-14 rounded-full bg-[#E2D9CE] flex items-center justify-center mb-7">
+                  <span
+                    className="text-[1.2rem] font-light text-[#B89A78]"
+                    style={{ fontFamily: "var(--font-heading)" }}
+                  >
+                    {p.initials}
                   </span>
                 </div>
-                <h3
-                  className="text-xl font-light text-[#1A1814] mb-1"
-                  style={{ fontFamily: "var(--font-heading)" }}
-                >
-                  {instructor.name}
-                </h3>
-                <p className="text-[11px] tracking-[0.2em] uppercase text-[#C4A882] font-medium mb-4">
-                  {instructor.role}
+                <p className="text-[10px] tracking-[0.28em] uppercase text-[#B89A78] font-medium mb-1">
+                  {p.role}
                 </p>
-                <p className="text-sm text-[#1A1814]/55 leading-relaxed font-light">{instructor.bio}</p>
+                <p className="text-[10px] tracking-[0.18em] uppercase text-[#181512]/30 font-light mb-5">
+                  {p.classes}
+                </p>
+                <p className="text-[13px] text-[#181512]/50 leading-relaxed font-light">{p.bio}</p>
               </div>
             ))}
           </div>
@@ -175,30 +180,33 @@ export default function AboutPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 px-6 lg:px-10 bg-[#F0EDE8] text-center">
-        <h2
-          className="text-[clamp(2rem,4vw,3.5rem)] font-light text-[#1A1814] mb-6"
-          style={{ fontFamily: "var(--font-heading)" }}
-        >
-          Come and meet us.
-        </h2>
-        <p className="text-base text-[#1A1814]/50 max-w-sm mx-auto mb-10 font-light">
-          The best way to understand The Common is to experience it. Book an intro class and see for yourself.
-        </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Link
-            href="/schedule"
-            className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-[#2D3B2E] text-[#FAF7F2] text-xs tracking-[0.2em] uppercase font-medium hover:bg-[#1A1814] transition-colors group"
+      <section className="py-28 px-6 lg:px-12 bg-[#F2EDE5] text-center">
+        <div className="max-w-xl mx-auto">
+          <div className="rule mx-auto mb-10" />
+          <h2
+            className="text-[clamp(2rem,4vw,3.5rem)] font-light text-[#181512] mb-6"
+            style={{ fontFamily: "var(--font-heading)" }}
           >
-            Book a Class
-            <ArrowRight size={12} className="group-hover:translate-x-1 transition-transform" />
-          </Link>
-          <Link
-            href="/contact"
-            className="inline-flex items-center justify-center px-8 py-4 border border-[#1A1814]/20 text-[#1A1814] text-xs tracking-[0.2em] uppercase font-medium hover:border-[#2D3B2E] transition-colors"
-          >
-            Get in Touch
-          </Link>
+            Come and find us.
+          </h2>
+          <p className="text-[14px] text-[#181512]/45 mb-12 font-light leading-relaxed">
+            The best way to understand The Common is to experience it. Book your intro class and see for yourself.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              href="/schedule"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#283629] text-[#F9F6F1] text-[10px] tracking-[0.25em] uppercase font-medium hover:bg-[#181512] transition-colors group"
+            >
+              Reserve a class
+              <ArrowRight size={11} className="group-hover:translate-x-0.5 transition-transform" />
+            </Link>
+            <Link
+              href="/contact"
+              className="inline-flex items-center justify-center px-8 py-4 border border-[#181512]/18 text-[#181512]/60 text-[10px] tracking-[0.25em] uppercase font-medium hover:border-[#283629] hover:text-[#283629] transition-colors"
+            >
+              Get in touch
+            </Link>
+          </div>
         </div>
       </section>
     </>

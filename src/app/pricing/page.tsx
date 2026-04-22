@@ -1,191 +1,185 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Check, ArrowRight } from "lucide-react";
+import { MomencePurchaseWidget } from "@/components/MomenceWidget";
 
 export const metadata: Metadata = {
-  title: "Pricing & Membership | The Common",
+  title: "Membership & Passes",
   description:
-    "Flexible class passes and monthly memberships at The Common reformer Pilates studio, Stoneygate, Leicester.",
+    "Flexible class passes and monthly membership at The Common reformer Pilates studio, Stoneygate, Leicester.",
 };
 
 const passes = [
   {
-    name: "Intro Offer",
+    name: "Intro",
+    qualifier: "New members only",
     price: "£25",
-    period: "one-time",
-    highlight: "New members only",
-    description: "The best way to discover The Common. Two classes, no strings.",
+    sub: "two classes",
+    note: "valid 14 days from first class",
     features: [
-      "2 reformer Pilates classes",
-      "Valid for 14 days from first class",
       "Any class type",
+      "Booking via Momence",
       "One per new member",
     ],
-    cta: "Claim Offer",
-    accent: true,
+    cta: "Claim your intro",
+    primary: true,
   },
   {
-    name: "Single Class",
+    name: "Single",
+    qualifier: null,
     price: "£20",
-    period: "per class",
-    highlight: null,
-    description: "Drop-in when it suits you.",
+    sub: "per class",
+    note: null,
     features: [
-      "1 class of your choice",
-      "Booking via Momence",
+      "Any class type",
       "Cancel up to 24h before",
-      "Grip socks available",
+      "Grip socks available at studio",
     ],
-    cta: "Book a Class",
-    accent: false,
+    cta: "Book a class",
+    primary: false,
   },
   {
-    name: "5 Class Pass",
+    name: "Five",
+    qualifier: "Save £10",
     price: "£90",
-    period: "£18 / class",
-    highlight: "Save £10",
-    description: "A flexible way to build a consistent practice.",
+    sub: "£18 per class",
+    note: "valid 8 weeks",
     features: [
-      "5 classes",
-      "Valid for 8 weeks",
       "Any class type",
       "Online booking included",
+      "Share across class types",
     ],
-    cta: "Buy Pass",
-    accent: false,
+    cta: "Buy a five-pass",
+    primary: false,
   },
   {
-    name: "10 Class Pass",
+    name: "Ten",
+    qualifier: "Save £30",
     price: "£170",
-    period: "£17 / class",
-    highlight: "Save £30",
-    description: "Our most popular pass for committed movers.",
+    sub: "£17 per class",
+    note: "valid 8 weeks",
     features: [
-      "10 classes",
-      "Valid for 8 weeks",
       "Any class type",
       "Priority booking window",
+      "Online booking included",
     ],
-    cta: "Buy Pass",
-    accent: false,
+    cta: "Buy a ten-pass",
+    primary: false,
   },
 ];
-
-const membership = {
-  name: "Monthly Membership",
-  price: "£POA",
-  period: "per month",
-  minTerm: "3-month minimum",
-  description:
-    "Unlimited community, 12 classes a month, and exclusive perks. For those who make The Common part of their lifestyle.",
-  features: [
-    "12 classes per month",
-    "1 guest pass per month",
-    "Priority access — book before public release",
-    "Member discounts on food & drinks",
-    "Exclusive member events",
-    "3-month minimum term, billed monthly",
-  ],
-};
 
 export default function PricingPage() {
   return (
     <>
       {/* Header */}
-      <section className="pt-36 pb-16 px-6 lg:px-10 bg-[#2D3B2E]">
+      <section className="pt-36 pb-20 px-6 lg:px-12 bg-[#283629]">
         <div className="max-w-7xl mx-auto">
-          <p className="text-[11px] tracking-[0.4em] uppercase text-[#C4A882] font-medium mb-4">
-            Pricing
+          <p className="text-[10px] tracking-[0.5em] uppercase text-[#B89A78] font-light mb-6">
+            Membership &amp; Passes
           </p>
           <h1
-            className="text-[clamp(2.5rem,6vw,5rem)] font-light leading-[1.05] text-[#FAF7F2]"
+            className="text-[clamp(2.5rem,6vw,5rem)] font-light leading-[1.02] text-[#F9F6F1]"
             style={{ fontFamily: "var(--font-heading)" }}
           >
-            Simple, honest pricing
+            An investment
+            <br />
+            <em className="italic text-[#B89A78]">in yourself.</em>
           </h1>
-          <p className="mt-4 text-base text-[#FAF7F2]/55 max-w-xl font-light leading-relaxed">
-            Whether you&apos;re trying us for the first time or making us a cornerstone
-            of your week — there&apos;s a plan that fits.
+          <p className="mt-5 text-[14px] text-[#F9F6F1]/45 max-w-lg font-light leading-relaxed">
+            Whether you're trying us for the first time or making The Common part
+            of your weekly rhythm — there's a plan that fits.
           </p>
         </div>
       </section>
 
       {/* Class passes */}
-      <section className="py-20 px-6 lg:px-10 bg-[#FAF7F2]">
+      <section className="py-20 px-6 lg:px-12">
         <div className="max-w-7xl mx-auto">
-          <p className="text-[11px] tracking-[0.4em] uppercase text-[#7C6548] font-medium mb-10">
+          <div className="rule mb-10" />
+          <h2
+            className="text-[1.5rem] font-light text-[#181512] mb-12"
+            style={{ fontFamily: "var(--font-heading)" }}
+          >
             Class Passes
-          </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-[#E8E0D4]">
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-[#E2D9CE]">
             {passes.map((pass) => (
               <div
                 key={pass.name}
-                className={`flex flex-col p-8 ${pass.accent ? "bg-[#2D3B2E]" : "bg-[#FAF7F2]"}`}
+                className={`flex flex-col p-9 ${
+                  pass.primary ? "bg-[#283629]" : "bg-[#F9F6F1]"
+                }`}
               >
-                {pass.highlight && (
+                {pass.qualifier && (
                   <span
-                    className={`self-start mb-4 px-3 py-1 text-[10px] tracking-[0.2em] uppercase font-medium ${
-                      pass.accent ? "bg-[#C4A882] text-[#1A1814]" : "bg-[#E8E0D4] text-[#7C6548]"
+                    className={`self-start mb-5 px-3 py-1 text-[9px] tracking-[0.25em] uppercase font-medium ${
+                      pass.primary ? "bg-[#B89A78] text-[#181512]" : "bg-[#E2D9CE] text-[#7A6248]"
                     }`}
                   >
-                    {pass.highlight}
+                    {pass.qualifier}
                   </span>
                 )}
+                {!pass.qualifier && <div className="mb-5 h-6" />}
+
                 <h3
-                  className={`text-xl font-light mb-1 ${pass.accent ? "text-[#FAF7F2]" : "text-[#1A1814]"}`}
+                  className={`text-[1.5rem] font-light mb-5 ${
+                    pass.primary ? "text-[#F9F6F1]" : "text-[#181512]"
+                  }`}
                   style={{ fontFamily: "var(--font-heading)" }}
                 >
                   {pass.name}
                 </h3>
-                <div className="mt-4 mb-2">
+
+                <div className="mb-1">
                   <span
-                    className={`text-4xl font-light ${pass.accent ? "text-[#FAF7F2]" : "text-[#1A1814]"}`}
+                    className={`text-[2.8rem] leading-none font-light ${
+                      pass.primary ? "text-[#F9F6F1]" : "text-[#181512]"
+                    }`}
                     style={{ fontFamily: "var(--font-heading)" }}
                   >
                     {pass.price}
                   </span>
                 </div>
                 <span
-                  className={`text-xs mb-4 ${pass.accent ? "text-[#C4A882]" : "text-[#7C6548]"}`}
+                  className={`text-[11px] mb-1 ${pass.primary ? "text-[#B89A78]" : "text-[#7A6248]"}`}
                 >
-                  {pass.period}
+                  {pass.sub}
                 </span>
-                <p
-                  className={`text-sm font-light leading-relaxed mb-6 flex-1 ${
-                    pass.accent ? "text-[#FAF7F2]/60" : "text-[#1A1814]/55"
-                  }`}
-                >
-                  {pass.description}
-                </p>
-                <ul className="flex flex-col gap-2 mb-8">
+                {pass.note && (
+                  <span
+                    className={`text-[10px] mb-6 font-light ${
+                      pass.primary ? "text-[#F9F6F1]/35" : "text-[#181512]/30"
+                    }`}
+                  >
+                    {pass.note}
+                  </span>
+                )}
+                {!pass.note && <div className="mb-6" />}
+
+                <ul className="flex flex-col gap-2.5 mb-10 flex-1">
                   {pass.features.map((f) => (
                     <li
                       key={f}
-                      className={`flex items-start gap-2 text-xs font-light ${
-                        pass.accent ? "text-[#FAF7F2]/70" : "text-[#1A1814]/60"
+                      className={`flex items-start gap-2 text-[12px] font-light ${
+                        pass.primary ? "text-[#F9F6F1]/55" : "text-[#181512]/50"
                       }`}
                     >
-                      <Check
-                        size={12}
-                        className={`mt-0.5 shrink-0 ${pass.accent ? "text-[#C4A882]" : "text-[#C4A882]"}`}
-                      />
+                      <Check size={11} className="text-[#B89A78] mt-0.5 shrink-0" />
                       {f}
                     </li>
                   ))}
                 </ul>
+
                 <Link
                   href="/schedule"
-                  className={`inline-flex items-center justify-center gap-2 px-5 py-3 text-xs tracking-[0.2em] uppercase font-medium transition-colors group ${
-                    pass.accent
-                      ? "bg-[#C4A882] text-[#1A1814] hover:bg-[#FAF7F2]"
-                      : "bg-[#2D3B2E] text-[#FAF7F2] hover:bg-[#1A1814]"
+                  className={`inline-flex items-center justify-center gap-2 px-5 py-3 text-[10px] tracking-[0.22em] uppercase font-medium transition-colors group ${
+                    pass.primary
+                      ? "bg-[#B89A78] text-[#181512] hover:bg-[#F9F6F1]"
+                      : "border border-[#283629] text-[#283629] hover:bg-[#283629] hover:text-[#F9F6F1]"
                   }`}
                 >
                   {pass.cta}
-                  <ArrowRight
-                    size={12}
-                    className="group-hover:translate-x-1 transition-transform"
-                  />
+                  <ArrowRight size={11} className="group-hover:translate-x-0.5 transition-transform" />
                 </Link>
               </div>
             ))}
@@ -193,49 +187,69 @@ export default function PricingPage() {
         </div>
       </section>
 
-      {/* Membership */}
-      <section className="py-20 px-6 lg:px-10 bg-[#1A1814]">
+      {/* Momence purchase widget (shows when slug is set) */}
+      <section className="px-6 lg:px-12 pb-4">
         <div className="max-w-7xl mx-auto">
-          <p className="text-[11px] tracking-[0.4em] uppercase text-[#C4A882] font-medium mb-10">
-            Membership
+          <MomencePurchaseWidget type="passes" />
+        </div>
+      </section>
+
+      {/* Membership */}
+      <section className="py-20 px-6 lg:px-12 bg-[#181512]">
+        <div className="max-w-7xl mx-auto">
+          <p className="text-[10px] tracking-[0.5em] uppercase text-[#B89A78] font-light mb-12">
+            Monthly Membership
           </p>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-px bg-[#FAF7F2]/10">
-            <div className="bg-[#FAF7F2]/5 p-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-px bg-[#F9F6F1]/8">
+            <div className="bg-[#F9F6F1]/5 p-12 lg:p-14">
               <h2
-                className="text-[clamp(2rem,4vw,3rem)] font-light text-[#FAF7F2] leading-[1.1] mb-4"
+                className="text-[clamp(2rem,4vw,3.2rem)] font-light text-[#F9F6F1] leading-[1.05] mb-8"
                 style={{ fontFamily: "var(--font-heading)" }}
               >
-                {membership.name}
+                Make it
+                <br />
+                <em className="italic text-[#B89A78]">your practice.</em>
               </h2>
-              <div className="flex items-baseline gap-3 mt-6 mb-2">
+              <p className="text-[14px] text-[#F9F6F1]/45 leading-relaxed font-light mb-10">
+                For those who make The Common part of their lifestyle. Twelve classes
+                a month, priority booking, a guest pass and member perks — on a
+                rolling monthly plan after an initial three-month term.
+              </p>
+              <div className="mb-10">
                 <span
-                  className="text-5xl font-light text-[#FAF7F2]"
+                  className="text-[3rem] font-light text-[#F9F6F1] leading-none"
                   style={{ fontFamily: "var(--font-heading)" }}
                 >
-                  {membership.price}
+                  POA
                 </span>
-                <span className="text-sm text-[#C4A882]">{membership.period}</span>
+                <span className="ml-3 text-[12px] text-[#B89A78]">per month</span>
+                <p className="text-[10px] text-[#F9F6F1]/25 mt-1 font-light">
+                  3-month minimum · billed monthly
+                </p>
               </div>
-              <p className="text-xs text-[#C4A882]/70 mb-6">{membership.minTerm}</p>
-              <p className="text-sm text-[#FAF7F2]/60 leading-relaxed font-light mb-10">
-                {membership.description}
-              </p>
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 px-7 py-3.5 bg-[#C4A882] text-[#1A1814] text-xs tracking-[0.2em] uppercase font-semibold hover:bg-[#FAF7F2] transition-colors group"
+                className="inline-flex items-center gap-2 px-7 py-3.5 bg-[#B89A78] text-[#181512] text-[10px] tracking-[0.25em] uppercase font-medium hover:bg-[#F9F6F1] transition-colors group"
               >
-                Enquire About Membership
-                <ArrowRight size={12} className="group-hover:translate-x-1 transition-transform" />
+                Enquire about membership
+                <ArrowRight size={11} className="group-hover:translate-x-0.5 transition-transform" />
               </Link>
             </div>
-            <div className="bg-[#FAF7F2]/5 p-12 flex flex-col justify-center">
-              <h3 className="text-xs tracking-[0.3em] uppercase text-[#C4A882] font-medium mb-6">
-                What&apos;s included
+            <div className="bg-[#F9F6F1]/5 p-12 lg:p-14 flex flex-col justify-center">
+              <h3 className="text-[9px] tracking-[0.38em] uppercase text-[#B89A78] font-medium mb-8">
+                What's included
               </h3>
-              <ul className="flex flex-col gap-4">
-                {membership.features.map((f) => (
-                  <li key={f} className="flex items-start gap-3 text-sm text-[#FAF7F2]/65 font-light">
-                    <Check size={14} className="mt-0.5 shrink-0 text-[#C4A882]" />
+              <ul className="flex flex-col gap-5">
+                {[
+                  "12 classes per month",
+                  "1 guest pass per month",
+                  "Priority booking — access before public release",
+                  "Member discounts on food and drinks",
+                  "Exclusive member events throughout the year",
+                  "3-month minimum term, billed monthly",
+                ].map((f) => (
+                  <li key={f} className="flex items-start gap-3 text-[13px] text-[#F9F6F1]/45 font-light">
+                    <Check size={13} className="text-[#B89A78] mt-0.5 shrink-0" />
                     {f}
                   </li>
                 ))}
@@ -246,14 +260,14 @@ export default function PricingPage() {
       </section>
 
       {/* Policy note */}
-      <section className="py-12 px-6 lg:px-10 bg-[#F0EDE8]">
-        <div className="max-w-3xl mx-auto text-center">
-          <p className="text-sm text-[#1A1814]/50 leading-relaxed font-light">
-            All bookings are handled securely via Momence. Class passes are valid for 8 weeks
-            from date of purchase. Memberships require a minimum 3-month term and are billed
-            monthly. Cancellations require 24 hours notice. Please{" "}
-            <Link href="/contact" className="underline underline-offset-2 hover:text-[#7C6548] transition-colors">
-              contact us
+      <section className="py-12 px-6 lg:px-12 bg-[#F2EDE5]">
+        <div className="max-w-2xl mx-auto text-center">
+          <p className="text-[12px] text-[#181512]/40 leading-relaxed font-light">
+            All bookings are processed securely via Momence. Class passes are valid for
+            8 weeks from purchase. Memberships require a minimum 3-month term. 24 hours
+            notice required to cancel without forfeiting your credit.{" "}
+            <Link href="/contact" className="underline underline-offset-2 hover:text-[#7A6248] transition-colors">
+              Contact us
             </Link>{" "}
             with any questions.
           </p>

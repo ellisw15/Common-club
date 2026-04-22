@@ -2,56 +2,76 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 
 const navLinks = [
-  { label: "Classes", href: "/classes" },
-  { label: "Schedule", href: "/schedule" },
-  { label: "Pricing", href: "/pricing" },
-  { label: "About", href: "/about" },
-  { label: "Menu", href: "/menu" },
-  { label: "Contact", href: "/contact" },
+  { label: "Practice", href: "/classes" },
+  { label: "Book",     href: "/schedule" },
+  { label: "Membership", href: "/pricing" },
+  { label: "About",    href: "/about" },
+  { label: "Visit",    href: "/contact" },
 ];
 
 export function Navigation() {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen]       = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
+  const isHome = pathname === "/";
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40);
+    const onScroll = () => setScrolled(window.scrollY > 60);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // On interior pages the nav is always on a light bg
+  const solidBg = !isHome || scrolled;
+
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-[#FAF7F2]/95 backdrop-blur-md shadow-sm"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        solidBg
+          ? "bg-[#F9F6F1]/96 backdrop-blur-sm border-b border-[#E2D9CE]/60"
           : "bg-transparent"
       }`}
     >
-      <nav className="max-w-7xl mx-auto px-6 lg:px-10 h-18 flex items-center justify-between py-4">
+      <nav className="max-w-7xl mx-auto px-6 lg:px-12 h-16 flex items-center justify-between">
+
         {/* Logo */}
-        <Link href="/" className="flex flex-col leading-none" onClick={() => setOpen(false)}>
+        <Link href="/" onClick={() => setOpen(false)} className="flex flex-col leading-none group">
           <span
-            className="text-2xl font-light tracking-[0.25em] uppercase"
+            className={`text-[1.35rem] font-light tracking-[0.22em] uppercase transition-colors duration-300 ${
+              solidBg ? "text-[#181512]" : "text-[#F9F6F1]"
+            }`}
             style={{ fontFamily: "var(--font-heading)" }}
           >
             The Common
           </span>
-          <span className="text-[10px] tracking-[0.3em] uppercase text-[#7C6548] font-light">
-            Reformer Pilates · Leicester
+          <span
+            className={`text-[9px] tracking-[0.38em] uppercase font-light transition-colors duration-300 ${
+              solidBg ? "text-[#B89A78]" : "text-[#B89A78]/80"
+            }`}
+          >
+            Stoneygate · Leicester
           </span>
         </Link>
 
-        {/* Desktop links */}
-        <ul className="hidden lg:flex items-center gap-8">
+        {/* Desktop */}
+        <ul className="hidden lg:flex items-center gap-9">
           {navLinks.map((link) => (
             <li key={link.href}>
               <Link
                 href={link.href}
-                className="text-xs tracking-[0.2em] uppercase font-medium text-[#1A1814]/70 hover:text-[#1A1814] transition-colors duration-200"
+                className={`text-[10.5px] tracking-[0.22em] uppercase font-medium transition-colors duration-200 ${
+                  solidBg
+                    ? pathname === link.href
+                      ? "text-[#181512]"
+                      : "text-[#181512]/45 hover:text-[#181512]"
+                    : pathname === link.href
+                      ? "text-[#F9F6F1]"
+                      : "text-[#F9F6F1]/50 hover:text-[#F9F6F1]"
+                }`}
               >
                 {link.label}
               </Link>
@@ -63,47 +83,54 @@ export function Navigation() {
         <div className="hidden lg:block">
           <Link
             href="/schedule"
-            className="inline-block px-6 py-2.5 bg-[#2D3B2E] text-[#FAF7F2] text-xs tracking-[0.2em] uppercase font-medium hover:bg-[#1A1814] transition-colors duration-200"
+            className={`inline-block px-6 py-2 text-[10px] tracking-[0.22em] uppercase font-medium border transition-all duration-200 ${
+              solidBg
+                ? "border-[#283629] text-[#283629] hover:bg-[#283629] hover:text-[#F9F6F1]"
+                : "border-[#F9F6F1]/60 text-[#F9F6F1] hover:bg-[#F9F6F1] hover:text-[#181512]"
+            }`}
           >
-            Book a Class
+            Reserve
           </Link>
         </div>
 
-        {/* Mobile hamburger */}
+        {/* Mobile toggle */}
         <button
-          className="lg:hidden p-2 text-[#1A1814]"
+          className={`lg:hidden p-2 transition-colors ${solidBg ? "text-[#181512]" : "text-[#F9F6F1]"}`}
           onClick={() => setOpen(!open)}
           aria-label="Toggle menu"
         >
-          {open ? <X size={22} /> : <Menu size={22} />}
+          {open ? <X size={20} strokeWidth={1.5} /> : <Menu size={20} strokeWidth={1.5} />}
         </button>
       </nav>
 
       {/* Mobile drawer */}
-      {open && (
-        <div className="lg:hidden bg-[#FAF7F2] border-t border-[#E8E0D4] px-6 pb-8 pt-4">
-          <ul className="flex flex-col gap-5">
-            {navLinks.map((link) => (
-              <li key={link.href}>
-                <Link
-                  href={link.href}
-                  onClick={() => setOpen(false)}
-                  className="text-sm tracking-[0.2em] uppercase font-medium text-[#1A1814]/70 hover:text-[#1A1814] transition-colors"
-                >
-                  {link.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-          <Link
-            href="/schedule"
-            onClick={() => setOpen(false)}
-            className="mt-6 inline-block w-full text-center px-6 py-3 bg-[#2D3B2E] text-[#FAF7F2] text-xs tracking-[0.2em] uppercase font-medium"
-          >
-            Book a Class
-          </Link>
+      <div
+        className={`lg:hidden overflow-hidden transition-all duration-300 ${
+          open ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+        } bg-[#F9F6F1] border-t border-[#E2D9CE]/60`}
+      >
+        <div className="px-6 py-8 flex flex-col gap-5">
+          {navLinks.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              onClick={() => setOpen(false)}
+              className="text-[11px] tracking-[0.25em] uppercase font-medium text-[#181512]/50 hover:text-[#181512] transition-colors"
+            >
+              {link.label}
+            </Link>
+          ))}
+          <div className="mt-2 pt-5 border-t border-[#E2D9CE]">
+            <Link
+              href="/schedule"
+              onClick={() => setOpen(false)}
+              className="inline-block w-full text-center px-6 py-3 border border-[#283629] text-[#283629] text-[10px] tracking-[0.22em] uppercase font-medium hover:bg-[#283629] hover:text-[#F9F6F1] transition-colors"
+            >
+              Reserve Your Place
+            </Link>
+          </div>
         </div>
-      )}
+      </div>
     </header>
   );
 }

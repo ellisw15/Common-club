@@ -1,65 +1,54 @@
 import Link from "next/link";
-import { ExternalLink, Mail, MapPin, Phone } from "lucide-react";
+import { MapPin, Mail, ExternalLink } from "lucide-react";
 
 const footerLinks = {
   Studio: [
-    { label: "Classes", href: "/classes" },
-    { label: "Schedule", href: "/schedule" },
-    { label: "Pricing", href: "/pricing" },
-    { label: "Club Rules", href: "/club-rules" },
+    { label: "The Practice",  href: "/classes" },
+    { label: "Book a Class",  href: "/schedule" },
+    { label: "Membership",    href: "/pricing" },
+    { label: "Studio Rules",  href: "/club-rules" },
   ],
-  Community: [
-    { label: "About Us", href: "/about" },
-    { label: "Cafe Menu", href: "/menu" },
-    { label: "Contact", href: "/contact" },
-    { label: "Book Intro Class", href: "/schedule" },
+  Company: [
+    { label: "About",    href: "/about" },
+    { label: "Visit",    href: "/contact" },
+    { label: "Privacy",  href: "/privacy" },
   ],
 };
 
 export function Footer() {
   return (
-    <footer className="bg-[#1A1814] text-[#FAF7F2]">
-      <div className="max-w-7xl mx-auto px-6 lg:px-10 py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+    <footer className="bg-[#181512] text-[#F9F6F1]">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12 pt-16 pb-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+
         {/* Brand */}
         <div className="lg:col-span-2">
           <p
-            className="text-2xl font-light tracking-[0.25em] uppercase mb-1"
+            className="text-[1.35rem] font-light tracking-[0.22em] uppercase mb-0.5"
             style={{ fontFamily: "var(--font-heading)" }}
           >
             The Common
           </p>
-          <p className="text-[10px] tracking-[0.3em] uppercase text-[#C4A882] mb-6 font-light">
+          <p className="text-[9px] tracking-[0.38em] uppercase text-[#B89A78] mb-7 font-light">
             Reformer Pilates · Leicester
           </p>
-          <p className="text-sm text-[#FAF7F2]/60 leading-relaxed max-w-sm">
-            A reformer Pilates studio and community hub in the heart of
-            Stoneygate. Move well, connect deeply, and find your community.
+          <p className="text-[13px] text-[#F9F6F1]/45 leading-relaxed max-w-xs font-light">
+            An intimate reformer Pilates studio and community in the heart of Stoneygate.
+            Move well. Connect deeply.
           </p>
-          <div className="mt-6 flex items-center gap-4">
-            <a
-              href="https://www.instagram.com/thecommon.club/"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Instagram"
-              className="text-[#FAF7F2]/50 hover:text-[#C4A882] transition-colors flex items-center gap-1.5 text-xs tracking-wider"
-            >
-              <ExternalLink size={16} />
-              @thecommon.club
-            </a>
-            <a
-              href="mailto:hello@thecommonclub.co.uk"
-              aria-label="Email"
-              className="text-[#FAF7F2]/50 hover:text-[#C4A882] transition-colors"
-            >
-              <Mail size={18} />
-            </a>
-          </div>
+          <a
+            href="https://www.instagram.com/thecommon.club/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-6 inline-flex items-center gap-2 text-[10px] tracking-[0.22em] uppercase text-[#F9F6F1]/35 hover:text-[#B89A78] transition-colors"
+          >
+            <ExternalLink size={11} />
+            @thecommon.club
+          </a>
         </div>
 
-        {/* Links */}
         {Object.entries(footerLinks).map(([group, links]) => (
           <div key={group}>
-            <h4 className="text-[10px] tracking-[0.3em] uppercase text-[#C4A882] font-medium mb-5">
+            <h4 className="text-[9px] tracking-[0.38em] uppercase text-[#B89A78] font-medium mb-5">
               {group}
             </h4>
             <ul className="space-y-3">
@@ -67,7 +56,7 @@ export function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-[#FAF7F2]/60 hover:text-[#FAF7F2] transition-colors"
+                    className="text-[13px] text-[#F9F6F1]/40 hover:text-[#F9F6F1]/75 transition-colors font-light"
                   >
                     {link.label}
                   </Link>
@@ -78,35 +67,30 @@ export function Footer() {
         ))}
       </div>
 
-      {/* Contact bar */}
-      <div className="border-t border-[#FAF7F2]/10">
-        <div className="max-w-7xl mx-auto px-6 lg:px-10 py-6 flex flex-col sm:flex-row gap-4 sm:gap-8 items-start sm:items-center text-xs text-[#FAF7F2]/40">
+      {/* Contact strip */}
+      <div className="border-t border-[#F9F6F1]/8">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12 py-5 flex flex-col sm:flex-row gap-4 sm:gap-10 items-start sm:items-center text-[11px] text-[#F9F6F1]/25 font-light">
           <span className="flex items-center gap-2">
-            <MapPin size={12} />
-            21 Allandale Road, Stoneygate, Leicester, LE2 2DA
+            <MapPin size={11} className="shrink-0" />
+            21 Allandale Road, Stoneygate, Leicester LE2 2DA
           </span>
           <a
-            href="tel:+441163000000"
-            className="flex items-center gap-2 hover:text-[#FAF7F2]/70 transition-colors"
+            href="mailto:hello@thecommonclub.co.uk"
+            className="flex items-center gap-2 hover:text-[#F9F6F1]/50 transition-colors"
           >
-            <Phone size={12} />
-            Contact us
+            <Mail size={11} className="shrink-0" />
+            hello@thecommonclub.co.uk
           </a>
         </div>
       </div>
 
       {/* Legal */}
-      <div className="border-t border-[#FAF7F2]/5">
-        <div className="max-w-7xl mx-auto px-6 lg:px-10 py-4 flex flex-col sm:flex-row justify-between gap-2 text-[11px] text-[#FAF7F2]/25">
+      <div className="border-t border-[#F9F6F1]/5">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12 py-4 flex flex-col sm:flex-row justify-between gap-2 text-[10px] text-[#F9F6F1]/18 font-light">
           <span>© {new Date().getFullYear()} The Common Club Ltd. All rights reserved.</span>
-          <div className="flex gap-4">
-            <Link href="/privacy" className="hover:text-[#FAF7F2]/50 transition-colors">
-              Privacy Policy
-            </Link>
-            <Link href="/club-rules" className="hover:text-[#FAF7F2]/50 transition-colors">
-              Club Rules
-            </Link>
-          </div>
+          <Link href="/privacy" className="hover:text-[#F9F6F1]/40 transition-colors">
+            Privacy Policy
+          </Link>
         </div>
       </div>
     </footer>

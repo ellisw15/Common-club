@@ -1,72 +1,57 @@
 import Link from "next/link";
-import { ArrowRight, ChevronDown } from "lucide-react";
-import { ClassCard } from "@/components/ClassCard";
-import { TestimonialCard } from "@/components/TestimonialCard";
+import { ArrowRight } from "lucide-react";
 
 const classes = [
   {
     name: "Foundation",
-    tag: "All Levels",
-    description:
-      "The perfect entry point into reformer Pilates. Full-body awareness — core, glutes, thighs, chest and back — with expert guidance on technique and posture.",
+    level: "All levels",
+    line: "Where every practice begins. Full-body technique with patient, expert guidance.",
     duration: "50 min",
-    bgClass: "bg-[#E8E0D4]",
-    light: false,
+    href: "/classes#foundation",
   },
   {
     name: "Elevate",
-    tag: "Intermediate",
-    description:
-      "Our signature class. Dynamic, controlled movements that deepen your coordination, flexibility and stamina. The natural evolution from Foundation.",
+    level: "Intermediate",
+    line: "Our signature class. Dynamic sequences that build strength, coordination and stamina.",
     duration: "50 min",
-    bgClass: "bg-[#2D3B2E]",
-    light: true,
+    href: "/classes#elevate",
   },
   {
     name: "Sculpt",
-    tag: "Advanced",
-    description:
-      "High-intensity reformer for experienced practitioners. Complex sequences demanding strength, endurance and precision.",
+    level: "Advanced",
+    line: "Demanding, precise, transformative. For practitioners who want to be tested.",
     duration: "50 min",
-    bgClass: "bg-[#C4A882]",
-    light: false,
+    href: "/classes#sculpt",
   },
   {
     name: "Barre",
-    tag: "All Levels",
-    description:
-      "Ballet-inspired movement meets Pilates precision. Low-impact, high-reward. Elongate, tone and restore using the barre for support.",
+    level: "All levels",
+    line: "Ballet-inspired movement that elongates, tones and restores. Low impact, high reward.",
     duration: "45 min",
-    bgClass: "bg-[#F0EDE8]",
-    light: false,
+    href: "/classes#barre",
   },
   {
     name: "Prenatal",
-    tag: "Specialist",
-    description:
-      "Purpose-built for expectant mothers. Safe, effective movement focusing on the pelvic floor, posture and the changing needs of your body.",
+    level: "Specialist",
+    line: "Thoughtfully crafted for expectant mothers — safe, nourishing and deeply supportive.",
     duration: "45 min",
-    bgClass: "bg-[#E8E0D4]",
-    light: false,
+    href: "/classes#prenatal",
   },
 ];
 
 const testimonials = [
   {
-    quote:
-      "I've tried studios across Leicester and nothing comes close. The instructors know your name and your body. It genuinely feels like a community, not a gym.",
+    quote: "I've tried studios across Leicester and nothing comes close. The instructors know your name and your body. It genuinely feels like a community.",
     name: "Sophie M.",
     detail: "Member since 2023",
   },
   {
-    quote:
-      "The Elevate class changed my body in ways I never expected. I came in skeptical of Pilates and left completely hooked. The cafe upstairs is a brilliant bonus.",
+    quote: "The Elevate class changed my body in ways I never expected. I came in sceptical and left completely converted.",
     name: "James K.",
-    detail: "Foundation → Elevate convert",
+    detail: "Foundation → Elevate",
   },
   {
-    quote:
-      "As a prenatal client I felt completely safe and supported throughout. The instructors are knowledgeable, the space is beautiful — I can't recommend it enough.",
+    quote: "As a prenatal client I felt completely safe and supported. The instructors are knowledgeable and the space is beautiful.",
     name: "Priya N.",
     detail: "Prenatal programme",
   },
@@ -75,296 +60,259 @@ const testimonials = [
 export default function HomePage() {
   return (
     <>
-      {/* HERO */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#2D3B2E]">
+      {/* ── HERO ─────────────────────────────────────────────────── */}
+      <section className="relative min-h-screen flex items-end bg-[#283629] overflow-hidden">
+        {/* Subtle gradient wash */}
         <div
-          className="absolute inset-0 opacity-25"
+          className="absolute inset-0"
           style={{
-            backgroundImage:
-              "radial-gradient(circle at 25% 60%, #C4A882 0%, transparent 55%), radial-gradient(circle at 75% 15%, #7C6548 0%, transparent 45%)",
+            background:
+              "radial-gradient(ellipse at 30% 70%, rgba(184,154,120,0.18) 0%, transparent 60%), radial-gradient(ellipse at 80% 10%, rgba(122,98,72,0.12) 0%, transparent 50%)",
           }}
         />
+        {/* Fine grid texture */}
         <div
-          className="absolute inset-0 opacity-[0.04]"
+          className="absolute inset-0 opacity-[0.035]"
           style={{
             backgroundImage:
-              "linear-gradient(#FAF7F2 1px, transparent 1px), linear-gradient(90deg, #FAF7F2 1px, transparent 1px)",
-            backgroundSize: "80px 80px",
+              "linear-gradient(#F9F6F1 1px, transparent 1px), linear-gradient(90deg, #F9F6F1 1px, transparent 1px)",
+            backgroundSize: "60px 60px",
           }}
         />
 
-        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-10 py-32 text-center">
-          <p className="text-[11px] tracking-[0.45em] uppercase text-[#C4A882] font-medium mb-8">
+        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 pb-20 pt-40 w-full">
+          <p className="text-[10px] tracking-[0.5em] uppercase text-[#B89A78] font-light mb-10">
             Stoneygate · Leicester
           </p>
+
           <h1
-            className="text-[clamp(3rem,9vw,7.5rem)] font-light leading-[1.02] text-[#FAF7F2] mb-8"
+            className="text-[clamp(3.5rem,9.5vw,8.5rem)] font-light leading-[0.95] text-[#F9F6F1] mb-12 max-w-4xl"
             style={{ fontFamily: "var(--font-heading)" }}
           >
             Move with
             <br />
-            <em className="italic text-[#C4A882]">intention.</em>
+            <em className="italic text-[#B89A78]">intention.</em>
           </h1>
-          <p className="text-base sm:text-lg text-[#FAF7F2]/55 max-w-md mx-auto leading-relaxed font-light mb-12">
-            A reformer Pilates studio and community in the heart of Stoneygate.
-            Expert-led classes for every level.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+
+          <div className="flex flex-col sm:flex-row items-start gap-6">
             <Link
               href="/schedule"
-              className="inline-flex items-center gap-3 px-8 py-4 bg-[#FAF7F2] text-[#1A1814] text-xs tracking-[0.2em] uppercase font-medium hover:bg-[#C4A882] transition-colors duration-300 group"
+              className="inline-flex items-center gap-3 px-8 py-3.5 bg-[#B89A78] text-[#181512] text-[10px] tracking-[0.25em] uppercase font-medium hover:bg-[#F9F6F1] transition-colors duration-300 group"
             >
-              Book a Class
-              <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+              Reserve Your Place
+              <ArrowRight size={13} className="group-hover:translate-x-1 transition-transform" />
             </Link>
             <Link
               href="/classes"
-              className="inline-flex items-center gap-3 px-8 py-4 border border-[#FAF7F2]/30 text-[#FAF7F2] text-xs tracking-[0.2em] uppercase font-medium hover:border-[#C4A882] hover:text-[#C4A882] transition-colors duration-300"
+              className="inline-flex items-center gap-2 text-[10px] tracking-[0.25em] uppercase font-medium text-[#F9F6F1]/40 hover:text-[#F9F6F1]/80 transition-colors pt-3.5"
             >
-              Explore Classes
+              The Practice
+              <ArrowRight size={12} />
             </Link>
           </div>
-
-          <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center text-[#FAF7F2]/30 animate-bounce">
-            <ChevronDown size={18} />
-          </div>
         </div>
+
+        {/* Bottom fade to cream */}
+        <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-[#283629]/0" />
       </section>
 
-      {/* INTRO OFFER BANNER */}
-      <section className="bg-[#C4A882] py-4">
-        <div className="max-w-7xl mx-auto px-6 lg:px-10 flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
-          <p className="text-sm font-medium text-[#1A1814]">
+      {/* ── INTRO OFFER ──────────────────────────────────────────── */}
+      <div className="bg-[#B89A78]">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12 py-4 flex flex-col sm:flex-row items-center justify-between gap-3">
+          <p className="text-[12px] text-[#181512]/80 font-light tracking-wide">
             New to The Common?{" "}
-            <span className="font-semibold">Try 2 classes for £25</span>
-            <span className="text-[#1A1814]/60 font-normal"> — valid for 14 days from your first class</span>
+            <span className="font-medium text-[#181512]">Two classes for £25</span>
+            <span className="text-[#181512]/55"> — valid for 14 days</span>
           </p>
           <Link
             href="/schedule"
-            className="shrink-0 inline-block px-5 py-2 bg-[#1A1814] text-[#FAF7F2] text-xs tracking-[0.2em] uppercase font-medium hover:bg-[#2D3B2E] transition-colors"
+            className="shrink-0 text-[10px] tracking-[0.25em] uppercase font-medium text-[#181512]/70 hover:text-[#181512] transition-colors underline underline-offset-4"
           >
-            Claim Offer
+            Book your intro
           </Link>
         </div>
-      </section>
+      </div>
 
-      {/* PHILOSOPHY */}
-      <section className="py-28 px-6 lg:px-10">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div>
-            <p className="text-[11px] tracking-[0.4em] uppercase text-[#7C6548] font-medium mb-6">
-              Our Philosophy
-            </p>
+      {/* ── STATEMENT ────────────────────────────────────────────── */}
+      <section className="py-32 px-6 lg:px-12">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+          <div className="lg:col-span-5">
+            <div className="rule mb-8" />
             <h2
-              className="text-[clamp(2rem,4vw,3.5rem)] font-light leading-[1.1] text-[#1A1814] mb-8"
+              className="text-[clamp(2.2rem,4.5vw,3.8rem)] font-light leading-[1.08] text-[#181512]"
               style={{ fontFamily: "var(--font-heading)" }}
             >
-              More than a studio —<br />
-              <em className="italic">a community.</em>
+              More than a studio —
+              <br />
+              <em className="italic text-[#7A6248]">a place to belong.</em>
             </h2>
-            <p className="text-base text-[#1A1814]/60 leading-relaxed mb-5 font-light">
-              The Common is where movement meets connection. Our reformer Pilates
-              classes are led by expert instructors who know your name, your goals
-              and your body. Every session is purposeful, every space considered.
-            </p>
-            <p className="text-base text-[#1A1814]/60 leading-relaxed mb-10 font-light">
-              Beyond the studio, our upstairs cafe is a gathering point — high-grade
-              matcha, specialty coffee, cold-pressed juices and fresh seasonal food,
-              all under one roof.
-            </p>
-            <Link
-              href="/about"
-              className="inline-flex items-center gap-3 text-sm tracking-[0.15em] uppercase font-medium text-[#2D3B2E] hover:text-[#7C6548] transition-colors group"
-            >
-              Our Story
-              <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
-            </Link>
           </div>
-
-          <div className="grid grid-cols-2 gap-px bg-[#E8E0D4]">
-            {[
-              { value: "5", label: "Class Types" },
-              { value: "50", label: "Min Sessions" },
-              { value: "LE2", label: "Stoneygate" },
-              { value: "∞", label: "Community" },
-            ].map((stat) => (
-              <div
-                key={stat.label}
-                className="bg-[#FAF7F2] p-10 flex flex-col items-center justify-center text-center"
+          <div className="lg:col-span-6 lg:col-start-7 flex flex-col gap-5 pt-2">
+            <p className="text-[15px] text-[#181512]/60 leading-relaxed font-light">
+              The Common is where movement meets connection. Our reformer Pilates
+              classes are led by instructors who know your name, your goals and your
+              body — and who show up for you the same way every session.
+            </p>
+            <p className="text-[15px] text-[#181512]/60 leading-relaxed font-light">
+              We built The Common for people who believe that how you move matters —
+              and that the space and community around that movement matter just as much.
+            </p>
+            <div className="mt-4">
+              <Link
+                href="/about"
+                className="inline-flex items-center gap-2 text-[10px] tracking-[0.25em] uppercase font-medium text-[#283629] hover:text-[#7A6248] transition-colors group"
               >
-                <span
-                  className="text-[clamp(2rem,5vw,3.5rem)] font-light text-[#2D3B2E] leading-none mb-2"
-                  style={{ fontFamily: "var(--font-heading)" }}
-                >
-                  {stat.value}
-                </span>
-                <span className="text-[11px] tracking-[0.25em] uppercase text-[#1A1814]/40 font-medium">
-                  {stat.label}
-                </span>
-              </div>
-            ))}
+                Our story
+                <ArrowRight size={12} className="group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* CLASSES */}
-      <section className="py-20 px-6 lg:px-10 bg-[#F0EDE8]">
+      {/* ── THE PRACTICE ─────────────────────────────────────────── */}
+      <section className="py-20 px-6 lg:px-12 bg-[#F2EDE5]">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-14 gap-4">
             <div>
-              <p className="text-[11px] tracking-[0.4em] uppercase text-[#7C6548] font-medium mb-4">
-                What We Offer
-              </p>
+              <div className="rule mb-6" />
               <h2
-                className="text-[clamp(2rem,4vw,3rem)] font-light leading-[1.1] text-[#1A1814]"
+                className="text-[clamp(2rem,4vw,3rem)] font-light leading-[1.08] text-[#181512]"
                 style={{ fontFamily: "var(--font-heading)" }}
               >
-                Five ways to move
+                The Practice
               </h2>
             </div>
             <Link
               href="/classes"
-              className="inline-flex items-center gap-2 text-xs tracking-[0.2em] uppercase font-medium text-[#2D3B2E] hover:text-[#7C6548] transition-colors group whitespace-nowrap"
+              className="inline-flex items-center gap-2 text-[10px] tracking-[0.25em] uppercase font-medium text-[#181512]/45 hover:text-[#283629] transition-colors group whitespace-nowrap"
             >
-              All Classes
-              <ArrowRight size={12} className="group-hover:translate-x-1 transition-transform" />
+              All sessions
+              <ArrowRight size={11} className="group-hover:translate-x-1 transition-transform" />
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-[#E8E0D4]">
-            {classes.map((c) => (
-              <ClassCard key={c.name} {...c} />
+          {/* Class list — editorial table style */}
+          <div className="flex flex-col divide-y divide-[#E2D9CE]">
+            {classes.map((c, i) => (
+              <Link
+                key={c.name}
+                href={c.href}
+                className="group grid grid-cols-12 gap-4 py-7 hover:bg-[#E2D9CE]/40 transition-colors -mx-4 px-4"
+              >
+                <span className="col-span-1 text-[11px] text-[#B89A78] font-light self-center hidden sm:block">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <div className="col-span-12 sm:col-span-3 self-center">
+                  <p
+                    className="text-[1.6rem] font-light text-[#181512] leading-none"
+                    style={{ fontFamily: "var(--font-heading)" }}
+                  >
+                    {c.name}
+                  </p>
+                  <p className="text-[10px] tracking-[0.2em] uppercase text-[#B89A78] mt-1">{c.level}</p>
+                </div>
+                <p className="col-span-12 sm:col-span-5 text-[13px] text-[#181512]/55 font-light leading-relaxed self-center">
+                  {c.line}
+                </p>
+                <div className="col-span-12 sm:col-span-2 flex sm:flex-col items-center sm:items-end justify-between sm:justify-center gap-2">
+                  <span className="text-[11px] text-[#181512]/35 font-light">{c.duration}</span>
+                  <ArrowRight
+                    size={14}
+                    className="text-[#B89A78]/0 group-hover:text-[#B89A78] transition-colors"
+                  />
+                </div>
+              </Link>
             ))}
           </div>
         </div>
       </section>
 
-      {/* SCHEDULE CTA */}
-      <section className="py-24 px-6 lg:px-10 bg-[#1A1814]">
-        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-10">
+      {/* ── RESERVE CTA ──────────────────────────────────────────── */}
+      <section className="py-28 px-6 lg:px-12 bg-[#181512]">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
-            <p className="text-[11px] tracking-[0.4em] uppercase text-[#C4A882] font-medium mb-4">
-              Powered by Momence
+            <p className="text-[10px] tracking-[0.4em] uppercase text-[#B89A78] font-light mb-6">
+              Online booking via Momence
             </p>
             <h2
-              className="text-[clamp(2rem,4vw,3rem)] font-light leading-[1.15] text-[#FAF7F2]"
+              className="text-[clamp(2rem,4vw,3.5rem)] font-light leading-[1.08] text-[#F9F6F1]"
               style={{ fontFamily: "var(--font-heading)" }}
             >
-              See this week&apos;s schedule &amp;
+              Your schedule,
               <br />
-              <em className="italic text-[#C4A882]">book in seconds.</em>
+              <em className="italic text-[#B89A78]">reserved in seconds.</em>
             </h2>
           </div>
-          <div className="flex flex-col sm:flex-row gap-4 shrink-0">
+          <div className="flex flex-col sm:flex-row lg:flex-col xl:flex-row gap-4">
             <Link
               href="/schedule"
-              className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-[#C4A882] text-[#1A1814] text-xs tracking-[0.2em] uppercase font-semibold hover:bg-[#FAF7F2] transition-colors duration-300 group"
+              className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-[#B89A78] text-[#181512] text-[10px] tracking-[0.25em] uppercase font-medium hover:bg-[#F9F6F1] transition-colors duration-300 group"
             >
               View Schedule
-              <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+              <ArrowRight size={13} className="group-hover:translate-x-1 transition-transform" />
             </Link>
             <Link
               href="/pricing"
-              className="inline-flex items-center justify-center px-8 py-4 border border-[#FAF7F2]/20 text-[#FAF7F2] text-xs tracking-[0.2em] uppercase font-medium hover:border-[#C4A882] hover:text-[#C4A882] transition-colors duration-300"
+              className="inline-flex items-center justify-center px-8 py-4 border border-[#F9F6F1]/15 text-[#F9F6F1]/60 text-[10px] tracking-[0.25em] uppercase font-medium hover:border-[#B89A78]/60 hover:text-[#B89A78] transition-colors duration-300"
             >
-              See Pricing
+              Membership &amp; Passes
             </Link>
           </div>
         </div>
       </section>
 
-      {/* TESTIMONIALS */}
-      <section className="py-24 px-6 lg:px-10">
+      {/* ── IN THEIR WORDS ───────────────────────────────────────── */}
+      <section className="py-28 px-6 lg:px-12">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-14">
-            <p className="text-[11px] tracking-[0.4em] uppercase text-[#7C6548] font-medium mb-4">
-              Member Stories
-            </p>
+          <div className="mb-14">
+            <div className="rule mb-6" />
             <h2
-              className="text-[clamp(2rem,4vw,3rem)] font-light leading-[1.1] text-[#1A1814]"
+              className="text-[clamp(2rem,4vw,3rem)] font-light leading-[1.08] text-[#181512]"
               style={{ fontFamily: "var(--font-heading)" }}
             >
-              What the community says
+              In their words
             </h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-[#E2D9CE]">
             {testimonials.map((t) => (
-              <TestimonialCard key={t.name} {...t} />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CAFE */}
-      <section className="py-24 px-6 lg:px-10 bg-[#C4A882]">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div>
-            <p className="text-[11px] tracking-[0.4em] uppercase text-[#7C6548] font-medium mb-6">
-              Upstairs
-            </p>
-            <h2
-              className="text-[clamp(2rem,4vw,3.5rem)] font-light leading-[1.1] text-[#1A1814] mb-8"
-              style={{ fontFamily: "var(--font-heading)" }}
-            >
-              Fuel your body,
-              <br />
-              <em className="italic">feed your soul.</em>
-            </h2>
-            <p className="text-base text-[#1A1814]/70 leading-relaxed mb-8 font-light">
-              After class, head upstairs to our community cafe. High-grade matcha,
-              specialty coffee, cold-pressed juices and fresh seasonal food —
-              crafted to complement how you move.
-            </p>
-            <Link
-              href="/menu"
-              className="inline-flex items-center gap-3 text-sm tracking-[0.15em] uppercase font-medium text-[#1A1814] hover:text-[#2D3B2E] transition-colors group"
-            >
-              View Menu
-              <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
-            </Link>
-          </div>
-          <div className="grid grid-cols-2 gap-4">
-            {["Matcha", "Cold Press", "Seasonal Food", "Specialty Coffee"].map((item) => (
-              <div
-                key={item}
-                className="bg-[#1A1814]/10 p-10 flex items-center justify-center text-center"
-              >
-                <span
-                  className="text-xl font-light text-[#1A1814]"
-                  style={{ fontFamily: "var(--font-heading)" }}
-                >
-                  {item}
-                </span>
+              <div key={t.name} className="bg-[#F9F6F1] p-10 flex flex-col gap-6">
+                <p className="text-[15px] text-[#181512]/60 leading-relaxed font-light flex-1 italic">
+                  &ldquo;{t.quote}&rdquo;
+                </p>
+                <div className="pt-6 border-t border-[#E2D9CE]">
+                  <p className="text-[13px] font-medium text-[#181512]">{t.name}</p>
+                  <p className="text-[11px] text-[#B89A78] tracking-wide mt-0.5">{t.detail}</p>
+                </div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* FINAL CTA */}
-      <section className="py-32 px-6 lg:px-10 text-center">
-        <p className="text-[11px] tracking-[0.4em] uppercase text-[#7C6548] font-medium mb-6">
-          Ready to start?
-        </p>
-        <h2
-          className="text-[clamp(2.5rem,6vw,5rem)] font-light leading-[1.05] text-[#1A1814] mb-10"
-          style={{ fontFamily: "var(--font-heading)" }}
-        >
-          Your first class
-          <br />
-          <em className="italic text-[#2D3B2E]">starts here.</em>
-        </h2>
-        <p className="text-base text-[#1A1814]/50 max-w-sm mx-auto mb-12 font-light leading-relaxed">
-          2 classes for £25 — your intro offer. No commitment. Just show up,
-          grip socks on, and move.
-        </p>
-        <Link
-          href="/schedule"
-          className="inline-flex items-center gap-3 px-10 py-5 bg-[#2D3B2E] text-[#FAF7F2] text-xs tracking-[0.2em] uppercase font-medium hover:bg-[#1A1814] transition-colors duration-300 group"
-        >
-          Book Your Intro Class
-          <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
-        </Link>
+      {/* ── FINAL CTA ────────────────────────────────────────────── */}
+      <section className="py-36 px-6 lg:px-12 bg-[#F2EDE5]">
+        <div className="max-w-2xl mx-auto text-center">
+          <div className="rule mx-auto mb-10" />
+          <h2
+            className="text-[clamp(2.5rem,6vw,5rem)] font-light leading-[1.02] text-[#181512] mb-8"
+            style={{ fontFamily: "var(--font-heading)" }}
+          >
+            Your first class
+            <br />
+            <em className="italic text-[#283629]">starts here.</em>
+          </h2>
+          <p className="text-[14px] text-[#181512]/45 max-w-sm mx-auto mb-12 font-light leading-relaxed">
+            Two classes for £25. No commitment — just show up, grip socks on, and move.
+          </p>
+          <Link
+            href="/schedule"
+            className="inline-flex items-center gap-3 px-10 py-4 bg-[#283629] text-[#F9F6F1] text-[10px] tracking-[0.25em] uppercase font-medium hover:bg-[#181512] transition-colors duration-300 group"
+          >
+            Reserve Your Intro Class
+            <ArrowRight size={13} className="group-hover:translate-x-1 transition-transform" />
+          </Link>
+        </div>
       </section>
     </>
   );

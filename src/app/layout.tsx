@@ -8,24 +8,28 @@ const heading = Cormorant_Garamond({
   variable: "--font-heading",
   subsets: ["latin"],
   weight: ["300", "400", "500", "600"],
+  style: ["normal", "italic"],
   display: "swap",
 });
 
 const body = Inter({
   variable: "--font-body",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600"],
+  weight: ["300", "400", "500"],
   display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "The Common | Reformer Pilates Studio · Leicester",
+  title: {
+    default: "The Common | Reformer Pilates · Stoneygate, Leicester",
+    template: "%s | The Common",
+  },
   description:
-    "Reformer Pilates studio and wellness community in Stoneygate, Leicester. Book classes online, explore our schedule and become part of The Common.",
+    "An intimate reformer Pilates studio in Stoneygate, Leicester. Expert-led classes, genuine community. Book your place.",
   openGraph: {
-    title: "The Common | Reformer Pilates Studio · Leicester",
+    title: "The Common | Reformer Pilates · Leicester",
     description:
-      "A reformer pilates studio and community hub in the heart of Stoneygate, Leicester.",
+      "An intimate reformer Pilates studio in Stoneygate, Leicester. Expert-led classes, genuine community.",
     url: "https://www.thecommonclub.co.uk",
     siteName: "The Common",
     locale: "en_GB",
@@ -35,12 +39,10 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={`${heading.variable} ${body.variable}`}>
-      <body className="min-h-screen flex flex-col antialiased bg-[#FAF7F2] text-[#1A1814]">
+      <body className="min-h-screen flex flex-col bg-[#F9F6F1] text-[#181512]">
         <Navigation />
         <main className="flex-1">{children}</main>
         <Footer />
